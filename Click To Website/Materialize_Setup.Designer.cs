@@ -51,6 +51,18 @@
             this.TextBar_3 = new System.Windows.Forms.PictureBox();
             this.TextBar_1 = new System.Windows.Forms.PictureBox();
             this.TextBar_2 = new System.Windows.Forms.PictureBox();
+            this.android_desktop_open = new System.Windows.Forms.OpenFileDialog();
+            this.favicon_open = new System.Windows.Forms.OpenFileDialog();
+            this.ios_desktop_open = new System.Windows.Forms.OpenFileDialog();
+            this.ios_png_ask = new System.Windows.Forms.Label();
+            this.android_png_ask = new System.Windows.Forms.Label();
+            this.favicon_png_ask = new System.Windows.Forms.Label();
+            this.ios_png_button = new System.Windows.Forms.Button();
+            this.android_png_button = new System.Windows.Forms.Button();
+            this.tab_png_button = new System.Windows.Forms.Button();
+            this.got_file_tab = new System.Windows.Forms.Label();
+            this.got_file_android = new System.Windows.Forms.Label();
+            this.got_file_ios = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).BeginInit();
@@ -286,6 +298,111 @@
             this.TextBar_2.TabStop = false;
             this.TextBar_2.Visible = false;
             // 
+            // android_desktop_open
+            // 
+            this.android_desktop_open.Title = "Choose an icon for android home screen";
+            // 
+            // favicon_open
+            // 
+            this.favicon_open.Title = "Choose an icon for the website tab";
+            // 
+            // ios_desktop_open
+            // 
+            this.ios_desktop_open.Title = "Choose an icon for ios home screen";
+            // 
+            // ios_png_ask
+            // 
+            this.ios_png_ask.AutoSize = true;
+            this.ios_png_ask.Location = new System.Drawing.Point(33, 9);
+            this.ios_png_ask.Name = "ios_png_ask";
+            this.ios_png_ask.Size = new System.Drawing.Size(103, 13);
+            this.ios_png_ask.TabIndex = 22;
+            this.ios_png_ask.Text = "choose a png for ios";
+            this.ios_png_ask.Visible = false;
+            // 
+            // android_png_ask
+            // 
+            this.android_png_ask.AutoSize = true;
+            this.android_png_ask.Location = new System.Drawing.Point(11, 51);
+            this.android_png_ask.Name = "android_png_ask";
+            this.android_png_ask.Size = new System.Drawing.Size(125, 13);
+            this.android_png_ask.TabIndex = 23;
+            this.android_png_ask.Text = "choose a png for android";
+            this.android_png_ask.Visible = false;
+            // 
+            // favicon_png_ask
+            // 
+            this.favicon_png_ask.AutoSize = true;
+            this.favicon_png_ask.Location = new System.Drawing.Point(31, 93);
+            this.favicon_png_ask.Name = "favicon_png_ask";
+            this.favicon_png_ask.Size = new System.Drawing.Size(105, 13);
+            this.favicon_png_ask.TabIndex = 24;
+            this.favicon_png_ask.Text = "choose a png for tab";
+            this.favicon_png_ask.Visible = false;
+            // 
+            // ios_png_button
+            // 
+            this.ios_png_button.Location = new System.Drawing.Point(61, 25);
+            this.ios_png_button.Name = "ios_png_button";
+            this.ios_png_button.Size = new System.Drawing.Size(75, 23);
+            this.ios_png_button.TabIndex = 25;
+            this.ios_png_button.Text = "Choose";
+            this.ios_png_button.UseVisualStyleBackColor = true;
+            this.ios_png_button.Visible = false;
+            this.ios_png_button.Click += new System.EventHandler(this.ios_png_button_Click);
+            // 
+            // android_png_button
+            // 
+            this.android_png_button.Location = new System.Drawing.Point(61, 67);
+            this.android_png_button.Name = "android_png_button";
+            this.android_png_button.Size = new System.Drawing.Size(75, 23);
+            this.android_png_button.TabIndex = 26;
+            this.android_png_button.Text = "Choose";
+            this.android_png_button.UseVisualStyleBackColor = true;
+            this.android_png_button.Visible = false;
+            this.android_png_button.Click += new System.EventHandler(this.android_png_button_Click);
+            // 
+            // tab_png_button
+            // 
+            this.tab_png_button.Location = new System.Drawing.Point(61, 109);
+            this.tab_png_button.Name = "tab_png_button";
+            this.tab_png_button.Size = new System.Drawing.Size(75, 23);
+            this.tab_png_button.TabIndex = 27;
+            this.tab_png_button.Text = "Choose";
+            this.tab_png_button.UseVisualStyleBackColor = true;
+            this.tab_png_button.Visible = false;
+            this.tab_png_button.Click += new System.EventHandler(this.tab_png_button_Click);
+            // 
+            // got_file_tab
+            // 
+            this.got_file_tab.AutoSize = true;
+            this.got_file_tab.Location = new System.Drawing.Point(142, 114);
+            this.got_file_tab.Name = "got_file_tab";
+            this.got_file_tab.Size = new System.Drawing.Size(41, 13);
+            this.got_file_tab.TabIndex = 30;
+            this.got_file_tab.Text = "got file!";
+            this.got_file_tab.Visible = false;
+            // 
+            // got_file_android
+            // 
+            this.got_file_android.AutoSize = true;
+            this.got_file_android.Location = new System.Drawing.Point(142, 72);
+            this.got_file_android.Name = "got_file_android";
+            this.got_file_android.Size = new System.Drawing.Size(41, 13);
+            this.got_file_android.TabIndex = 29;
+            this.got_file_android.Text = "got file!";
+            this.got_file_android.Visible = false;
+            // 
+            // got_file_ios
+            // 
+            this.got_file_ios.AutoSize = true;
+            this.got_file_ios.Location = new System.Drawing.Point(142, 28);
+            this.got_file_ios.Name = "got_file_ios";
+            this.got_file_ios.Size = new System.Drawing.Size(41, 13);
+            this.got_file_ios.TabIndex = 28;
+            this.got_file_ios.Text = "got file!";
+            this.got_file_ios.Visible = false;
+            // 
             // Materialize_Setup
             // 
             this.AcceptButton = this.Next_Button;
@@ -296,6 +413,15 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 251);
+            this.Controls.Add(this.got_file_tab);
+            this.Controls.Add(this.got_file_android);
+            this.Controls.Add(this.got_file_ios);
+            this.Controls.Add(this.tab_png_button);
+            this.Controls.Add(this.android_png_button);
+            this.Controls.Add(this.ios_png_button);
+            this.Controls.Add(this.favicon_png_ask);
+            this.Controls.Add(this.android_png_ask);
+            this.Controls.Add(this.ios_png_ask);
             this.Controls.Add(this.TextBar_2);
             this.Controls.Add(this.TextBar_1);
             this.Controls.Add(this.TextBar_3);
@@ -359,5 +485,17 @@
         private System.Windows.Forms.PictureBox TextBar_3;
         private System.Windows.Forms.PictureBox TextBar_1;
         private System.Windows.Forms.PictureBox TextBar_2;
+        private System.Windows.Forms.OpenFileDialog android_desktop_open;
+        private System.Windows.Forms.OpenFileDialog favicon_open;
+        private System.Windows.Forms.OpenFileDialog ios_desktop_open;
+        private System.Windows.Forms.Label ios_png_ask;
+        private System.Windows.Forms.Label android_png_ask;
+        private System.Windows.Forms.Label favicon_png_ask;
+        private System.Windows.Forms.Button ios_png_button;
+        private System.Windows.Forms.Button android_png_button;
+        private System.Windows.Forms.Button tab_png_button;
+        private System.Windows.Forms.Label got_file_tab;
+        private System.Windows.Forms.Label got_file_android;
+        private System.Windows.Forms.Label got_file_ios;
     }
 }

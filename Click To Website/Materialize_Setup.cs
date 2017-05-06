@@ -14,10 +14,10 @@ using System.IO;//
 
 /// <summary>
 /// To Do:
-///1. Get rid of View Source button
-///Ask for png files (one being 192x192 called android-desktop, other being 120x120 called ios-desktop and the last one being 32x32 called favicon)
-///2. Able to change nav bar and top colours
-///3. able to change the text in pages (last thing to do)
+///1. Add warnings for 4 pages
+///2. Able to change nav bar and top colours (Not possable ATM)
+///3. Fix where if there is a space in the page name it will show not in the index.html
+///4. able to change the text in pages (last thing to do)
 /// </summary>
 
 namespace Click_To_Website
@@ -37,6 +37,7 @@ namespace Click_To_Website
 
     public partial class Materialize_Setup : Form
     {
+        //Itn's used to make sure everything have been completed
         public int TemplateUsed = 0;
         public int PagesFail = 0;
         public int Pages = 0;
@@ -52,7 +53,7 @@ namespace Click_To_Website
             if (Website_Look_Ask.Visible && comboBox_Select_Template.Visible && Website_Picture.Visible == true)
             {
                 if (comboBox_Select_Template.SelectedItem == "MDI Text Only")
-                {   
+                {
                     //Making what on the screen go away
                     Website_Look_Ask.Visible = false;
                     comboBox_Select_Template.Visible = false;
@@ -69,6 +70,8 @@ namespace Click_To_Website
                     Pages_Ask.Visible = true;
                     Pages_TextBox.Visible = true;
                     TemplateUsed = 1;
+
+                    //Making evrything where it should be and resizing the form
                     Next_Button.Location = new System.Drawing.Point(12, 135);
                     Next_Button.Size = new System.Drawing.Size(215, 23);
                     this.Size = new System.Drawing.Size(255, 210);
@@ -97,7 +100,7 @@ namespace Click_To_Website
                     MessageBox.Show("Put in a name for your Website", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                //Making Number that user put in into a int so it can be used
+                //Making Number input into a int so it can be used by the program
                 try
                 {
                     if (Pages_TextBox.Text.Length == 0)
@@ -115,6 +118,7 @@ namespace Click_To_Website
                     MessageBox.Show("Put in a (number) for how much pages you what", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     PagesFail = 1;
                 }
+
                 if (PagesFail == 0)
                 {
                     if (Pages >= 5)
@@ -136,6 +140,7 @@ namespace Click_To_Website
                         Pages_Ask.Visible = false;
                         Pages_TextBox.Visible = false;
 
+                        //Seeing how much pages the user whats and changes to how mucg=h they what
                         if (Pages == 1)
                         {
                             TextBar_2.Visible = false;
@@ -181,9 +186,88 @@ namespace Click_To_Website
                     }
                 }
             }
+            //Asking for pngs for the website so there icons on the browser tab bar and on android/ios home screen
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == false && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                TextBar_1.Visible = false;
+                ios_png_ask.Visible = true;
+                ios_png_button.Visible = true;
+                android_png_ask.Visible = true;
+                android_png_button.Visible = true;
+                favicon_png_ask.Visible = true;
+                tab_png_button.Visible = true;
+                //Making evrything where it should be and resizing the form
+                Next_Button.Location = new System.Drawing.Point(12, 135);
+                Next_Button.Size = new System.Drawing.Size(215, 23);
+                this.Size = new System.Drawing.Size(255, 210);
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                TextBar_1.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                ios_png_ask.Visible = true;
+                ios_png_button.Visible = true;
+                android_png_ask.Visible = true;
+                android_png_button.Visible = true;
+                favicon_png_ask.Visible = true;
+                tab_png_button.Visible = true;
+                //Making evrything where it should be and resizing the form
+                Next_Button.Location = new System.Drawing.Point(12, 135);
+                Next_Button.Size = new System.Drawing.Size(215, 23);
+                this.Size = new System.Drawing.Size(255, 210);
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == false)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                TextBar_1.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                Page3_Name_Ask.Visible = false;
+                Page3_Name_TextBox.Visible = false;
+                TextBar_3.Visible = false;
+                ios_png_ask.Visible = true;
+                ios_png_button.Visible = true;
+                android_png_ask.Visible = true;
+                android_png_button.Visible = true;
+                favicon_png_ask.Visible = true;
+                tab_png_button.Visible = true;
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == true && Page4_Name_TextBox.Text.Length >= 1)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                TextBar_1.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                Page3_Name_Ask.Visible = false;
+                Page3_Name_TextBox.Visible = false;
+                TextBar_3.Visible = false;
+                Page4_Name_Ask.Visible = false;
+                Page4_Name_TextBox.Visible = false;
+                TextBar_4.Visible = false;
+                ios_png_ask.Visible = true;
+                ios_png_button.Visible = true;
+                android_png_ask.Visible = true;
+                android_png_button.Visible = true;
+                favicon_png_ask.Visible = true;
+                tab_png_button.Visible = true;
+                //Making evrything where it should be and resizing the form
+                Next_Button.Location = new System.Drawing.Point(12, 135);
+                Next_Button.Size = new System.Drawing.Size(215, 23);
+                this.Size = new System.Drawing.Size(255, 210);
+            }
             else if (TemplateUsed == 1 && PagesFail == 0 && AllFilledIn == 1)
             {
-                //Making Everything that user has put in into strings and starts to make the website
+                //Making Everything that user has put in into strings and starts to make the website!
                 string DescriptionText = Description_TextBox.Text;
                 string Description = "\"" + DescriptionText + "\"";
                 string Title = Title_TextBox.Text;
@@ -194,6 +278,7 @@ namespace Click_To_Website
                 string PageName4 = Page4_Name_TextBox.Text;
                 string WebsiteNav = "";
 
+                //Website Pages
                 string[] Webpage =   {
 "        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName1.ToLower() + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
@@ -513,6 +598,18 @@ string.Join("",Webpage3),
 "        </div>",
 };
 
+                #region pngs
+                string android_desktop_loc = android_desktop_open.FileName;
+                byte[] android_desktop_png_file = File.ReadAllBytes(android_desktop_loc);
+
+                string favicon_loc = favicon_open.FileName;
+                byte[] favicon_png_file = File.ReadAllBytes(favicon_loc);
+
+                string ios_desktop_loc = ios_desktop_open.FileName;
+                byte[] ios_desktop_png_file = File.ReadAllBytes(ios_desktop_loc);
+#endregion
+
+                //Making the nav bar change on how much pages they are
                 if (Pages == 1)
                 {
                     WebsiteNav = "<a href =\"#" + PageName1.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>";
@@ -672,6 +769,7 @@ string.Join("",DefaultPage),
 "            </div>",
 "            <ul class=\"mdl-mega-footer--link-list\">",
 "              <li><a href=\"https://developers.google.com/web/starter-kit/ \">Web Starter Kit</a></li>",
+"              <li><a href=\"https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/ \">View Source Code</a></li>",
 "              <li><a href=\"#\">Help</a></li>",
 "              <li><a href=\"#\">Privacy and Terms</a></li>",
 "            </ul>",
@@ -679,11 +777,11 @@ string.Join("",DefaultPage),
 "        </footer>",
 "      </main>",
 "    </div>",
-"    <a href=\"https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/ \" target=\"_blank\" id=\"view-source\" class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast\">View Source</a>",
 "    <script src=\"https://code.getmdl.io/1.3.0/material.min.js \"></script>",
 "      </body>",
 "    </html>",
 };
+
                 String[] MDI_Text_Only_CSS =
                 {
 "/**",
@@ -924,8 +1022,9 @@ string.Join("",DefaultPage),
 ".mdl-demo .mdl-menu__container {",
 "  z-index: 99;",
 "}",
-                };
+};
 
+                //Asking user where it what to be saved to
                 Save_Website_Dialog.ShowDialog();
                 if (Save_Website_Dialog.SelectedPath.Length >= 1)
                 {
@@ -933,6 +1032,10 @@ string.Join("",DefaultPage),
                     {
                         File.WriteAllLines(Save_Website_Dialog.SelectedPath + @"\" + "index.html", MDI_Text_Only);
                         File.WriteAllLines(Save_Website_Dialog.SelectedPath + @"\" + "styles.css", MDI_Text_Only_CSS);
+                        Directory.CreateDirectory(Save_Website_Dialog.SelectedPath + @"\images");
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\android_desktop.png", android_desktop_png_file);
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\ios_desktop.png", ios_desktop_png_file);
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\favicon.png", favicon_png_file);
                         MessageBox.Show($"Finished. Go to ({Save_Website_Dialog.SelectedPath}) to see your website (click on index.html not style.css)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -940,21 +1043,58 @@ string.Join("",DefaultPage),
                         Directory.CreateDirectory(Save_Website_Dialog.SelectedPath);
                         File.WriteAllLines(Save_Website_Dialog.SelectedPath + @"\" + "index.html", MDI_Text_Only);
                         File.WriteAllLines(Save_Website_Dialog.SelectedPath + @"\" + "styles.css", MDI_Text_Only_CSS);
-                        MessageBox.Show($"Finished. Go to ({Save_Website_Dialog.SelectedPath}) to see your website (click on index.html not style.css)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        Directory.CreateDirectory(Save_Website_Dialog.SelectedPath + "images");
+                        Directory.CreateDirectory(Save_Website_Dialog.SelectedPath + @"\images");
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\android_desktop.png", android_desktop_png_file);
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\ios_desktop.png", ios_desktop_png_file);
+                        File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\favicon.png", favicon_png_file);
+                        MessageBox.Show($"Finished. Go to ({Save_Website_Dialog.SelectedPath}) to see your website (click on index.html not style.css)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Information);                    }
                 }
                 else
                 {
                     MessageBox.Show("Couldn't make the Website (Did you not press a folder for it to go into?)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else if (ios_png_ask.Visible && android_png_ask.Visible && favicon_png_ask.Visible == true)
+            {
+                if (got_file_ios.Visible && got_file_android.Visible && got_file_tab.Visible == true)
+                {
+                    AllFilledIn = 1;
+                    Next_Button.PerformClick();
+                }
+                else if (got_file_tab.Visible && got_file_android.Visible == true)
+                {
+                    MessageBox.Show("put in a png for ios", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (got_file_tab.Visible && got_file_ios.Visible == true)
+                {
+                    MessageBox.Show("put in a png for android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (got_file_ios.Visible && got_file_android.Visible == true)
+                {
+                    MessageBox.Show("put in a png for PC", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (got_file_android.Visible == true)
+                {
+                    MessageBox.Show("put in a png for ios and PC", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (got_file_ios.Visible == true)
+                {
+                    MessageBox.Show("put in a png for PC and android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (got_file_tab.Visible == true)
+                {
+                    MessageBox.Show("put in a png for ios and android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("put in a png for ios, android and PC", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
             else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == false)
             {
                 if (Page1_Name_TextBox.Text.Length >= 1)
                 {
-                    AllFilledIn = 1;
-                    //This is so the user don't have to click the button twise for it to show the folder dialog
-                    Next_Button.PerformClick();
                 }
                 else
                 {
@@ -967,9 +1107,6 @@ string.Join("",DefaultPage),
                 {
                     if (Page2_Name_TextBox.Text.Length >= 1)
                     {
-                        AllFilledIn = 1;
-                        //This is so the user don't have to click the button twise for it to show the folder dialog
-                        Next_Button.PerformClick();
                     }
                 }
                 if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1)
@@ -980,7 +1117,7 @@ string.Join("",DefaultPage),
                 {
                     MessageBox.Show("You need to put in a name for your second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if(Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0)
+                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your first and second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -993,19 +1130,16 @@ string.Join("",DefaultPage),
                     {
                         if (Page3_Name_TextBox.Text.Length >= 1)
                         {
-                            AllFilledIn = 1;
-                            //This is so the user don't have to click the button twise for it to show the folder dialog
-                            Next_Button.PerformClick();
                         }
                     }
                 }
                 if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1)
                 {
-                    MessageBox.Show("You need to put in a name for your first and second page","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("You need to put in a name for your first and second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0)
                 {
-                    MessageBox.Show("You need to put in a name for your second and third page","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("You need to put in a name for your second and third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0)
                 {
@@ -1047,6 +1181,33 @@ string.Join("",DefaultPage),
         private void Materialize_Setup_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ios_png_button_Click(object sender, EventArgs e)
+        {
+            ios_desktop_open.ShowDialog();
+            if(ios_desktop_open.FileName.Length >= 1)
+            {
+                got_file_ios.Visible = true;
+            }
+        }
+
+        private void android_png_button_Click(object sender, EventArgs e)
+        {
+            android_desktop_open.ShowDialog();
+            if (android_desktop_open.FileName.Length >= 1)
+            {
+                got_file_android.Visible = true;
+            }
+        }
+
+        private void tab_png_button_Click(object sender, EventArgs e)
+        {
+            favicon_open.ShowDialog();
+            if (favicon_open.FileName.Length >= 1)
+            {
+                got_file_tab.Visible = true;
+            }
         }
     }
 }

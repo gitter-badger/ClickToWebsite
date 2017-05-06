@@ -49,7 +49,7 @@
             // 
             this.Welcome_Name.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Welcome_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Welcome_Name.Location = new System.Drawing.Point(12, 9);
+            this.Welcome_Name.Location = new System.Drawing.Point(43, 9);
             this.Welcome_Name.Name = "Welcome_Name";
             this.Welcome_Name.Size = new System.Drawing.Size(102, 33);
             this.Welcome_Name.TabIndex = 0;
