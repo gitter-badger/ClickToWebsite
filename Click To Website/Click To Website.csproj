@@ -52,10 +52,10 @@
     <Compile Include="Bootstrap_Setup.Designer.cs">
       <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materialize_Setup.cs">
+    <Compile Include="Materialize\Materialize_Setup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materialize_Setup.Designer.cs">
+    <Compile Include="Materialize\Materialize_Setup.Designer.cs">
       <DependentUpon>Materialize_Setup.cs</DependentUpon>
     </Compile>
     <Compile Include="Welcome_And_Framework.cs">
@@ -69,7 +69,7 @@
     <EmbeddedResource Include="Bootstrap_Setup.resx">
       <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materialize_Setup.resx">
+    <EmbeddedResource Include="Materialize\Materialize_Setup.resx">
       <DependentUpon>Materialize_Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome_And_Framework.resx">

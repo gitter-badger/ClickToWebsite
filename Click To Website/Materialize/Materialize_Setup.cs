@@ -14,10 +14,9 @@ using System.IO;//
 
 /// <summary>
 /// To Do:
-///1. Add warnings for 4 pages
-///2. Able to change nav bar and top colours (Not possable ATM)
-///3. Fix where if there is a space in the page name it will show not in the index.html
-///4. able to change the text in pages (last thing to do)
+///1. maybe make it to be able to change Contents side bar and background color.
+///2. able to change text+links on the footer.
+///3. able to change the text in pages (last thing to do)
 /// </summary>
 
 namespace Click_To_Website
@@ -40,8 +39,19 @@ namespace Click_To_Website
         //Itn's used to make sure everything have been completed
         public int TemplateUsed = 0;
         public int PagesFail = 0;
+        public  int ParagraphFail = 0;
         public int Pages = 0;
         public int AllFilledIn = 0;
+        public int R = 81;
+        public int G = 45;
+        public int B = 168;
+        public int Paragraph1 = 0;
+        public int Paragraph2 = 0;
+        public int Paragraph3 = 0;
+        public int Paragraph4 = 0;
+        public string Paragraph1_Content_Pageone = "";
+        public string Paragraph1_Title_Pageone = "";
+        public string Content_List = "";
 
         public Materialize_Setup()
         {
@@ -52,31 +62,37 @@ namespace Click_To_Website
         {
             if (Website_Look_Ask.Visible && comboBox_Select_Template.Visible && Website_Picture.Visible == true)
             {
-                if (comboBox_Select_Template.SelectedItem == "MDI Text Only")
+                if (comboBox_Select_Template.Text.Length >= 1)
                 {
                     //Making what on the screen go away
                     Website_Look_Ask.Visible = false;
                     comboBox_Select_Template.Visible = false;
                     Website_Picture.Visible = false;
+                    NavBar_preview.Visible = false;
+                    Top_preview.Visible = false;
+                    navbar_colour_Button.Visible = false;
 
-                    //Making what I need to be on the screen... Well be on the screen!
-                    TextBar_1.Visible = true;
-                    TextBar_2.Visible = true;
-                    TextBar_3.Visible = true;
-                    Description_Ask.Visible = true;
-                    Description_TextBox.Visible = true;
-                    Title_Ask.Visible = true;
-                    Title_TextBox.Visible = true;
-                    Pages_Ask.Visible = true;
-                    Pages_TextBox.Visible = true;
-                    TemplateUsed = 1;
+                    if (comboBox_Select_Template.SelectedItem == "MDI Text Only")
+                    {
+                        //Making what I need to be on the screen... Well be on the screen!
+                        TextBar_1.Visible = true;
+                        TextBar_2.Visible = true;
+                        TextBar_3.Visible = true;
+                        Description_Ask.Visible = true;
+                        Description_TextBox.Visible = true;
+                        Title_Ask.Visible = true;
+                        Title_TextBox.Visible = true;
+                        Pages_Ask.Visible = true;
+                        Pages_TextBox.Visible = true;
+                        TemplateUsed = 1;
 
-                    //Making evrything where it should be and resizing the form
-                    Next_Button.Location = new System.Drawing.Point(12, 135);
-                    Next_Button.Size = new System.Drawing.Size(215, 23);
-                    this.Size = new System.Drawing.Size(255, 210);
+                        //Making evrything where it should be and resizing the form
+                        Next_Button.Location = new Point(12, 135);
+                        Next_Button.Size = new Size(215, 23);
+                        this.Size = new Size(255, 210);
+                    }
+                    //Add else if(...) when starting another Template//
                 }
-                //Add else if(...) when starting another Template//
                 else
                 {
                     MessageBox.Show("You need to choose a design that your website will end up being", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -84,18 +100,15 @@ namespace Click_To_Website
             }
             else if (Description_Ask.Visible && Description_TextBox.Visible == true)
             {
-                if (Description_TextBox.Text.Length == 0)
+                if (Description_TextBox.Text.Length == 0 && Title_TextBox.Text.Length == 0)
                 {
-                    if (Title_TextBox.Text.Length == 0)
-                    {
-                        MessageBox.Show("Put in a name for your Website and a description", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Put in a description", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Put in a name for your Website and a description", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (Title_TextBox.Text.Length == 0)
+                else if (Description_TextBox.Text.Length == 0 && Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Put in a description", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (Title_TextBox.Text.Length == 0 && Description_TextBox.Text.Length >= 1)
                 {
                     MessageBox.Show("Put in a name for your Website", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -106,6 +119,7 @@ namespace Click_To_Website
                     if (Pages_TextBox.Text.Length == 0)
                     {
                         MessageBox.Show("You need to put in how much pages you what (as long it less then 4 pages)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        PagesFail = 1;
                     }
                     else
                     {
@@ -140,15 +154,15 @@ namespace Click_To_Website
                         Pages_Ask.Visible = false;
                         Pages_TextBox.Visible = false;
 
-                        //Seeing how much pages the user whats and changes to how mucg=h they what
+                        //Seeing how much pages the user whats and changes to how much they what
                         if (Pages == 1)
                         {
                             TextBar_2.Visible = false;
                             TextBar_3.Visible = false;
                             Page1_Name_Ask.Visible = true;
                             Page1_Name_TextBox.Visible = true;
-                            Next_Button.Location = new System.Drawing.Point(12, 50);
-                            this.Size = new System.Drawing.Size(255, 120);
+                            Next_Button.Location = new Point(12, 50);
+                            this.Size = new Size(255, 120);
                         }
                         else if (Pages == 2)
                         {
@@ -157,8 +171,8 @@ namespace Click_To_Website
                             Page1_Name_TextBox.Visible = true;
                             Page2_Name_Ask.Visible = true;
                             Page2_Name_TextBox.Visible = true;
-                            Next_Button.Location = new System.Drawing.Point(12, 95);
-                            this.Size = new System.Drawing.Size(255, 170);
+                            Next_Button.Location = new Point(12, 95);
+                            this.Size = new Size(255, 170);
                         }
                         else if (Pages == 3)
                         {
@@ -180,29 +194,96 @@ namespace Click_To_Website
                             Page3_Name_TextBox.Visible = true;
                             Page4_Name_Ask.Visible = true;
                             Page4_Name_TextBox.Visible = true;
-                            Next_Button.Location = new System.Drawing.Point(12, 170);
-                            this.Size = new System.Drawing.Size(255, 240);
+                            Next_Button.Location = new Point(12, 170);
+                            this.Size = new Size(255, 240);
                         }
                     }
                 }
             }
-            //Asking for pngs for the website so there icons on the browser tab bar and on android/ios home screen
             else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == false && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
             {
                 Page1_Name_Ask.Visible = false;
                 Page1_Name_TextBox.Visible = false;
-                TextBar_1.Visible = false;
-                ios_png_ask.Visible = true;
-                ios_png_button.Visible = true;
-                android_png_ask.Visible = true;
-                android_png_button.Visible = true;
-                favicon_png_ask.Visible = true;
-                tab_png_button.Visible = true;
-                //Making evrything where it should be and resizing the form
-                Next_Button.Location = new System.Drawing.Point(12, 135);
-                Next_Button.Size = new System.Drawing.Size(215, 23);
-                this.Size = new System.Drawing.Size(255, 210);
+                Paragraph_Ask_Firstpage.Visible = true;
+                Paragraph_TextBox_Firstpage.Visible = true;
             }
+            else if (Paragraph_Ask_Firstpage.Visible == true && Paragraph_TextBox_Firstpage.Visible == true && Paragraph_Ask_Secondpage.Visible == false)
+            {
+                try
+                {
+                    if (Paragraph_TextBox_Firstpage.Text.Length == 0)
+                    {
+                        MessageBox.Show("You need to tell be how much paragraphs you what in page one", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else if (Convert.ToInt32(Paragraph_TextBox_Firstpage.Text) >= 5)
+                    {
+                        MessageBox.Show("You can't do more then 4 paragraphs (for now...)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        Paragraph1 = Convert.ToInt32(Paragraph_TextBox_Firstpage.Text);
+                        ParagraphFail = 0;
+                        Paragraph_Ask_Firstpage.Visible = false;
+                        Paragraph_TextBox_Firstpage.Visible = false;
+                        if (Paragraph1 == 1)
+                        {
+                            this.Size = new Size(300, 290);
+                            Next_Button.Location = new Point(12, 217);
+                            Next_Button.Size = new Size(260, 23);
+                            Paragraph1_Title_Pageone_Ask.Visible = true;
+                            Paragraph1_Title_Pageone_TextBox.Visible = true;
+                            Paragraph1_Content_Pageone_Ask.Visible = true;
+                            Paragraph1_Content_Pageone_TextBox.Visible = true;
+                        }
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Put in a number", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ParagraphFail = 1;
+                }
+            }
+            else if (Paragraph1_Content_Pageone_Ask.Visible == true && Paragraph1_Content_Pageone_TextBox.Visible == true) //Add Paragragh2 SOON!
+            {
+                if (Paragraph1_Content_Pageone_TextBox.Text.Length == 0 && Paragraph1_Title_Pageone_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content of the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_Pageone_TextBox.Text.Length >= 1 && Paragraph1_Title_Pageone_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_Pageone_TextBox.Text.Length == 0 && Paragraph1_Title_Pageone_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content of the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    Paragraph1_Content_Pageone = Paragraph1_Content_Pageone_TextBox.ToString();
+                    Paragraph1_Title_Pageone = Paragraph1_Title_Pageone_TextBox.ToString();
+
+                    Content_List =
+"                <a href =\"#" + Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") + "</a>";
+                    Paragraph1_Title_Pageone_Ask.Visible = false;
+                    Paragraph1_Title_Pageone_TextBox.Visible = false;
+                    Paragraph1_Content_Pageone_Ask.Visible = false;
+                    Paragraph1_Content_Pageone_TextBox.Visible = false;
+                    TextBar_1.Visible = false;
+
+                    ios_png_ask.Visible = true;
+                    ios_png_button.Visible = true;
+                    android_png_ask.Visible = true;
+                    android_png_button.Visible = true;
+                    favicon_png_ask.Visible = true;
+                    favicon_png_button.Visible = true;
+                    //Making evrything where it should be and resizing the form
+                    Next_Button.Location = new Point(12, 135);
+                    Next_Button.Size = new Size(215, 23);
+                    this.Size = new Size(255, 210);
+                }
+            }
+            //Change this too what it needs to be after getting what above to work
+            //Asking for pngs for the website so there icons on the browser tab bar and on android/ios home screen
             else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
             {
                 Page1_Name_Ask.Visible = false;
@@ -216,11 +297,11 @@ namespace Click_To_Website
                 android_png_ask.Visible = true;
                 android_png_button.Visible = true;
                 favicon_png_ask.Visible = true;
-                tab_png_button.Visible = true;
+                favicon_png_button.Visible = true;
                 //Making evrything where it should be and resizing the form
-                Next_Button.Location = new System.Drawing.Point(12, 135);
-                Next_Button.Size = new System.Drawing.Size(215, 23);
-                this.Size = new System.Drawing.Size(255, 210);
+                Next_Button.Location = new Point(12, 135);
+                Next_Button.Size = new Size(215, 23);
+                this.Size = new Size(255, 210);
             }
             else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == false)
             {
@@ -238,7 +319,7 @@ namespace Click_To_Website
                 android_png_ask.Visible = true;
                 android_png_button.Visible = true;
                 favicon_png_ask.Visible = true;
-                tab_png_button.Visible = true;
+                favicon_png_button.Visible = true;
             }
             else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == true && Page4_Name_TextBox.Text.Length >= 1)
             {
@@ -259,11 +340,11 @@ namespace Click_To_Website
                 android_png_ask.Visible = true;
                 android_png_button.Visible = true;
                 favicon_png_ask.Visible = true;
-                tab_png_button.Visible = true;
+                favicon_png_button.Visible = true;
                 //Making evrything where it should be and resizing the form
-                Next_Button.Location = new System.Drawing.Point(12, 135);
-                Next_Button.Size = new System.Drawing.Size(215, 23);
-                this.Size = new System.Drawing.Size(255, 210);
+                Next_Button.Location = new Point(12, 135);
+                Next_Button.Size = new Size(215, 23);
+                this.Size = new Size(255, 210);
             }
             else if (TemplateUsed == 1 && PagesFail == 0 && AllFilledIn == 1)
             {
@@ -280,52 +361,22 @@ namespace Click_To_Website
 
                 //Website Pages
                 string[] Webpage =   {
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName1.ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName1.Replace(" ","").ToLower() + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
-"              <h4>Features</h4>",
-"              Minim duis incididunt est cillum est ex occaecat consectetur.Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.",
+"              <h4>"+PageName1.Replace(" ","") +"</h4>",
+"              <p></p>",
 "              <ul class=\"toc\">",
-"                <h4>Contents</h4>",
-"                <a href =\"#lorem1\"> Lorem ipsum</a>",
-"                <a href =\"#lorem2\"> Lorem ipsum</a>",
-"                <a href =\"#lorem3\"> Lorem ipsum</a>",
-"                <a href =\"#lorem4\"> Lorem ipsum</a>",
-"                <a href =\"#lorem5\"> Lorem ipsum</a>",
+"                <h4>Contents of page</h4>",
+Content_List,
 "              </ul>",
-"              <h5 id=\"lorem1\"> Lorem ipsum dolor sit amet</h5>",
-"                  Excepteur et pariatur officia veniam anim culpa cupidatat consequat ad velit culpa est non.",
-"              <ul>",
-"                <li>Nisi qui nisi duis commodo duis reprehenderit consequat velit aliquip.</li>",
-"                <li>Dolor consectetur incididunt in ipsum laborum non et irure pariatur excepteur anim occaecat officia sint.</li>",
-"                <li>Lorem labore proident officia excepteur do.</li>",
-"              </ul>",
-"              <p>",
-"                    Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id.Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore.Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor.Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.",
-"              </p>",
-"              <p>",
-"                    Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation.Magna sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt qui ex incididunt sit anim incididunt sit elit ad officia id.",
-"              </p>",
-"              <p id=\"lorem2\">",
-"                    Tempor voluptate ex consequat fugiat aliqua.Do sit et reprehenderit culpa deserunt culpa.Excepteur quis minim mollit irure nulla excepteur enim quis in laborum.Aliqua elit voluptate ad deserunt nulla reprehenderit adipisicing sint.Est in eiusmod exercitation esse commodo. Ea reprehenderit exercitation veniam adipisicing minim nostrud.Veniam dolore ex ea occaecat non enim minim id ut aliqua adipisicing ad.Occaecat excepteur aliqua tempor cupidatat aute dolore deserunt ipsum qui incididunt aliqua occaecat sit quis.Culpa sint aliqua aliqua reprehenderit veniam irure fugiat ea ad.",
-"              </p>",
-"              <p>",
-"                    Eu minim fugiat laborum irure veniam Lorem aliqua enim.Aliqua veniam incididunt consequat irure consequat tempor do nisi deserunt. Elit dolore ad quis consectetur sint laborum anim magna do nostrud amet. Ea nulla sit consequat quis qui irure dolor. Sint deserunt excepteur consectetur magna irure. Dolor tempor exercitation dolore pariatur incididunt ut laboris fugiat ipsum sunt veniam aute sunt labore.Non dolore sit nostrud eu ad excepteur cillum eu ex Lorem duis.",
-"              </p>",
-"              <p>",
-"                    Id occaecat velit non ipsum occaecat aliqua quis ut.Eiusmod est magna non esse est ex incididunt aute ullamco. Cillum excepteur sint ipsum qui quis velit incididunt amet.Qui deserunt anim enim laborum cillum reprehenderit duis mollit amet ad officia enim.Minim sint et quis aliqua aliqua do minim officia dolor deserunt ipsum laboris. Nulla nisi voluptate consectetur est voluptate et amet. Occaecat ut quis adipisicing ad enim. Magna est magna sit duis proident veniam reprehenderit fugiat reprehenderit enim velit ex.Ullamco laboris culpa irure aliquip ad Lorem consequat veniam ad ipsum eu. Ipsum culpa dolore sunt officia laborum quis.",
-"                  </p>",
+"              <h5 id=\""+ Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "").ToLower()+ "1\">"+ Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") + "</h5>",
+"<p>" +Paragraph1_Content_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") +"</p>",
 "              <h5 id=\"lorem3\"> Lorem ipsum dolor sit amet</h5>",
-"              <p id=\"lorem4\">",
+"              <p>",
 "                    Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor.Dolore quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim duis laborum dolor in velit pariatur commodo ullamco eu.Aute adipisicing ad duis labore laboris do mollit dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.",
-"                  </p>",
-"              <p id=\"lorem5\">",
 "                    Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco.Anim est irure commodo eiusmod pariatur officia.Est dolor ipsum excepteur magna aliqua ad veniam irure qui occaecat eiusmod aute fugiat commodo.Quis mollit incididunt amet sit minim velit eu fugiat voluptate excepteur.Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.",
-"              </p>",
-"              <p>",
 "                    Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua.Ipsum voluptate voluptate exercitation laborum deserunt nulla elit aliquip et minim ex veniam.Duis cupidatat aute sunt officia mollit dolor ad elit ad aute labore nostrud duis pariatur.In est sint voluptate consectetur velit ea non labore.Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.",
-"              </p>",
-"              <p>",
 "                    Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi.Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum.Aliquip mollit laboris ad labore anim.",
 "              </p>",
 "            </div>",
@@ -334,7 +385,7 @@ namespace Click_To_Website
 };
                 string[] Webpage2 = {
 string.Join("",Webpage),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName2.ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName2.Replace(" ","").ToLower() + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -389,7 +440,7 @@ string.Join("",Webpage),
                 string[] Webpage3 = {
 string.Join("",Webpage),
 string.Join("",Webpage2),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName3.ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName3.Replace(" ","").ToLower() + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -445,7 +496,7 @@ string.Join("",Webpage2),
 string.Join("",Webpage),
 string.Join("",Webpage2),
 string.Join("",Webpage3),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName4.ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName4.Replace(" ","").ToLower() + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -607,34 +658,36 @@ string.Join("",Webpage3),
 
                 string ios_desktop_loc = ios_desktop_open.FileName;
                 byte[] ios_desktop_png_file = File.ReadAllBytes(ios_desktop_loc);
-#endregion
+                #endregion
 
+                #region NavBar Changes
                 //Making the nav bar change on how much pages they are
                 if (Pages == 1)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>";
                 }
                 else if (Pages == 2)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>";
                     Webpage = Webpage2;
                 }
                 else if (Pages == 3)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
-                    "<a href =\"#" + PageName3.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
+                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>";
                     Webpage = Webpage3;
                 }
                 else if (Pages == 4)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
-                    "<a href =\"#" + PageName3.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>" +
-                    "<a href =\"#" + PageName4.ToLower() + "\" class=\"mdl-layout__tab\">" + PageName4 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
+                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>" +
+                    "<a href =\"#" + PageName4.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName4 + "</a>";
                     Webpage = Webpage4;
                 }
+                #endregion
 
                 String[] MDI_Text_Only =
                 {
@@ -698,6 +751,18 @@ string.Join("",Webpage3),
 "      margin-bottom: 40px;",
 "      z-index: 900;",
 "    }",
+//This lets me change the colour of the top and nav bar
+"	.mdl-color--primary-dark",
+"    {",
+//Top
+"    background-color: rgb("+(R-30)+","+(G-30)+","+(B-30)+") !important;",
+"    }",
+"	.mdl-color--primary",
+"    {",
+//Bar
+"      background-color: rgb("+R+","+G+","+B+") !important;",
+"    }",
+//This lets me change the colour of the top and nav bar
 "    </style>",
 "      </head>",
 "  <body class=\"mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base\">",
@@ -781,7 +846,6 @@ string.Join("",DefaultPage),
 "      </body>",
 "    </html>",
 };
-
                 String[] MDI_Text_Only_CSS =
                 {
 "/**",
@@ -1048,7 +1112,8 @@ string.Join("",DefaultPage),
                         File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\android_desktop.png", android_desktop_png_file);
                         File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\ios_desktop.png", ios_desktop_png_file);
                         File.WriteAllBytes(Save_Website_Dialog.SelectedPath + @"\images\favicon.png", favicon_png_file);
-                        MessageBox.Show($"Finished. Go to ({Save_Website_Dialog.SelectedPath}) to see your website (click on index.html not style.css)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Information);                    }
+                        MessageBox.Show($"Finished. Go to ({Save_Website_Dialog.SelectedPath}) to see your website (click on index.html not style.css)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -1057,16 +1122,16 @@ string.Join("",DefaultPage),
             }
             else if (ios_png_ask.Visible && android_png_ask.Visible && favicon_png_ask.Visible == true)
             {
-                if (got_file_ios.Visible && got_file_android.Visible && got_file_tab.Visible == true)
+                if (got_file_ios.Visible && got_file_android.Visible && got_file_favicon.Visible == true)
                 {
                     AllFilledIn = 1;
                     Next_Button.PerformClick();
                 }
-                else if (got_file_tab.Visible && got_file_android.Visible == true)
+                else if (got_file_favicon.Visible && got_file_android.Visible == true)
                 {
                     MessageBox.Show("put in a png for ios", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (got_file_tab.Visible && got_file_ios.Visible == true)
+                else if (got_file_favicon.Visible && got_file_ios.Visible == true)
                 {
                     MessageBox.Show("put in a png for android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -1082,7 +1147,7 @@ string.Join("",DefaultPage),
                 {
                     MessageBox.Show("put in a png for PC and android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (got_file_tab.Visible == true)
+                else if (got_file_favicon.Visible == true)
                 {
                     MessageBox.Show("put in a png for ios and android", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -1091,90 +1156,149 @@ string.Join("",DefaultPage),
                     MessageBox.Show("put in a png for ios, android and PC", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == false)
+            else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == false && Page1_Name_TextBox.Text.Length == 0)
             {
-                if (Page1_Name_TextBox.Text.Length >= 1)
-                {
-                }
-                else
-                {
-                    MessageBox.Show("You need to put in a name for your first page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                MessageBox.Show("You need to put in a name for your first page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == true && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
             {
-                if (Page1_Name_TextBox.Text.Length >= 1)
-                {
-                    if (Page2_Name_TextBox.Text.Length >= 1)
-                    {
-                    }
-                }
                 if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1)
                 {
                     MessageBox.Show("You need to put in a name for your first page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your first and second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == true && Page3_Name_TextBox.Visible == true && Page4_Name_TextBox.Visible == false)
             {
-                if (Page1_Name_TextBox.Text.Length >= 1)
-                {
-                    if (Page2_Name_TextBox.Text.Length >= 1)
-                    {
-                        if (Page3_Name_TextBox.Text.Length >= 1)
-                        {
-                        }
-                    }
-                }
                 if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1)
                 {
                     MessageBox.Show("You need to put in a name for your first and second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your second and third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your first and third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1)
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1)
                 {
                     MessageBox.Show("You need to put in a name for your second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length >= 1)
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length >= 1)
                 {
                     MessageBox.Show("You need to put in a name for your first page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for your third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0)
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("You need to put in a name for all your pages", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page2_Name_TextBox.Visible == true && Page3_Name_TextBox.Visible == true && Page4_Name_TextBox.Visible == true)
+            {
+                if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your first and second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your second and third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your first and third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your second page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your first page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for your third page", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for all your pages", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page two, three and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page one, three and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page one, two and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page three and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page two and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for page one, two and three", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length == 0 && Page3_Name_TextBox.Text.Length == 0 && Page4_Name_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("You need to put in a name for page two and three", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length == 0 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page one and four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("You need to put in a name for page four", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
 
         private void comboBox_Select_Template_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox_Select_Template.SelectedItem == "MDI Text Only")
+            if (comboBox_Select_Template.SelectedItem == "MDI Text Only")
             {
+                this.Size = new Size(580, 290);
+                Top_preview.BackColor = Color.FromArgb(R,G,B);
+                NavBar_preview.BackColor = Color.FromArgb(R - 20, G - 20, B - 20);
+                NavBar_preview.Visible = true;
+                Top_preview.Visible = true;
+                navbar_colour_Button.Visible = true;
+
                 Website_Picture.BackgroundImage = global::Click_To_Website.Properties.Resources.MDI_Text_Only_Pic;
                 Website_Picture.BorderStyle = BorderStyle.None;
             }
+            //Add else if when adding new Template here
             else
             {
+                NavBar_preview.Visible = false;
+                Top_preview.Visible = false;
+                navbar_colour_Button.Visible = false;
+
                 Website_Picture.BackgroundImage = null;
                 Website_Picture.BorderStyle = BorderStyle.FixedSingle;
+                this.Size = new Size(300, 290);
             }
         }
 
@@ -1190,6 +1314,10 @@ string.Join("",DefaultPage),
             {
                 got_file_ios.Visible = true;
             }
+            else
+            {
+                MessageBox.Show("Didn't get the image try again", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void android_png_button_Click(object sender, EventArgs e)
@@ -1199,14 +1327,43 @@ string.Join("",DefaultPage),
             {
                 got_file_android.Visible = true;
             }
+            else
+            {
+                MessageBox.Show("Didn't get the image try again", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
-        private void tab_png_button_Click(object sender, EventArgs e)
+        private void favicon_png_button_Click(object sender, EventArgs e)
         {
             favicon_open.ShowDialog();
             if (favicon_open.FileName.Length >= 1)
             {
-                got_file_tab.Visible = true;
+                got_file_favicon.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Didn't get the image try again", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void navbar_colour_Button_Click(object sender, EventArgs e)
+        {
+            if (Navbar_colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    R = Navbar_colorDialog.Color.R;
+                    G = Navbar_colorDialog.Color.G;
+                    B = Navbar_colorDialog.Color.B;
+                    //Where it can fail
+                    NavBar_preview.BackColor = Color.FromArgb(R - 20, G - 20, B - 20);
+                    //Where it can fail
+                    Top_preview.BackColor = Color.FromArgb(R,G,B);
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("Colour too dark to use (red, blue and green need to be 21 and up)","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

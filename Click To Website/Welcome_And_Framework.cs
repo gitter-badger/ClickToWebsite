@@ -22,6 +22,7 @@ namespace Click_To_Website
             #region Welcome
             if (Welcome_Name.Visible && Welcome_Info.Visible == true)
             {
+                this.Size = new Size(215, 351);
                 //Make what on the screen not visible
                 Welcome_Name.Visible = false;
                 Welcome_Info.Visible = false;
@@ -34,15 +35,15 @@ namespace Click_To_Website
                 Picture_Bootstrap.Visible = true;
                 Picture_Materialize.Visible = true;
                 Next_Button.Location = new Point(17, 275);
-                this.Size = new Size(215, 351);
             }
             #endregion
             #region Select Framework
             else if (Background_Bootstrap.Visible == true)
             {
-                this.Hide();
-                Bootstrap_Setup BSet = new Bootstrap_Setup();
-                BSet.Show();
+                MessageBox.Show("This is hasn't been started on yet. Use Materialize.", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //this.Hide();
+                //Bootstrap_Setup BSet = new Bootstrap_Setup();
+                //BSet.Show();
             }
             else if (Background_Materialize.Visible == true)
             {

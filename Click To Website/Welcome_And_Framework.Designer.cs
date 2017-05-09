@@ -49,9 +49,9 @@
             // 
             this.Welcome_Name.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Welcome_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Welcome_Name.Location = new System.Drawing.Point(43, 9);
+            this.Welcome_Name.Location = new System.Drawing.Point(8, 9);
             this.Welcome_Name.Name = "Welcome_Name";
-            this.Welcome_Name.Size = new System.Drawing.Size(102, 33);
+            this.Welcome_Name.Size = new System.Drawing.Size(170, 33);
             this.Welcome_Name.TabIndex = 0;
             this.Welcome_Name.Text = "Welcome To\r\nClick To Website";
             this.Welcome_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,10 +59,10 @@
             // Welcome_Info
             // 
             this.Welcome_Info.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Welcome_Info.Location = new System.Drawing.Point(14, 62);
+            this.Welcome_Info.Location = new System.Drawing.Point(8, 57);
             this.Welcome_Info.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.Welcome_Info.Name = "Welcome_Info";
-            this.Welcome_Info.Size = new System.Drawing.Size(168, 35);
+            this.Welcome_Info.Size = new System.Drawing.Size(170, 70);
             this.Welcome_Info.TabIndex = 1;
             this.Welcome_Info.Text = "This program will let you make a website without knowing any html!";
             this.Welcome_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,9 +70,9 @@
             // Next_Button
             // 
             this.Next_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Next_Button.Location = new System.Drawing.Point(14, 100);
+            this.Next_Button.Location = new System.Drawing.Point(8, 130);
             this.Next_Button.Name = "Next_Button";
-            this.Next_Button.Size = new System.Drawing.Size(168, 23);
+            this.Next_Button.Size = new System.Drawing.Size(170, 20);
             this.Next_Button.TabIndex = 2;
             this.Next_Button.Text = "Next";
             this.Next_Button.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(199, 151);
+            this.ClientSize = new System.Drawing.Size(184, 161);
             this.Controls.Add(this.Bootstrap_Ask);
             this.Controls.Add(this.Materialize_Ask);
             this.Controls.Add(this.Framework_Ask);
@@ -182,6 +182,7 @@
             this.Controls.Add(this.Next_Button);
             this.Controls.Add(this.Welcome_Info);
             this.Controls.Add(this.Welcome_Name);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Welcome_And_Framework";
             this.ShowIcon = false;

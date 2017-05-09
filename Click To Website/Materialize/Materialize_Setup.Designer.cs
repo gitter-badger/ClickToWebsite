@@ -59,15 +59,35 @@
             this.favicon_png_ask = new System.Windows.Forms.Label();
             this.ios_png_button = new System.Windows.Forms.Button();
             this.android_png_button = new System.Windows.Forms.Button();
-            this.tab_png_button = new System.Windows.Forms.Button();
-            this.got_file_tab = new System.Windows.Forms.Label();
+            this.favicon_png_button = new System.Windows.Forms.Button();
+            this.got_file_favicon = new System.Windows.Forms.Label();
             this.got_file_android = new System.Windows.Forms.Label();
             this.got_file_ios = new System.Windows.Forms.Label();
+            this.Navbar_colorDialog = new System.Windows.Forms.ColorDialog();
+            this.NavBar_preview = new System.Windows.Forms.PictureBox();
+            this.Top_preview = new System.Windows.Forms.PictureBox();
+            this.navbar_colour_Button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Paragraph_TextBox_Firstpage = new System.Windows.Forms.RichTextBox();
+            this.Paragraph_Ask_Firstpage = new System.Windows.Forms.Label();
+            this.Paragraph_TextBox_Secondpage = new System.Windows.Forms.RichTextBox();
+            this.Paragraph_Ask_Secondpage = new System.Windows.Forms.Label();
+            this.Paragraph_TextBox_Thirdpage = new System.Windows.Forms.RichTextBox();
+            this.Paragraph_Ask_Thirdpage = new System.Windows.Forms.Label();
+            this.Paragraph_TextBox_Fourthpage = new System.Windows.Forms.RichTextBox();
+            this.Paragraph_Ask_Fourthpage = new System.Windows.Forms.Label();
+            this.Paragraph1_Title_Pageone_Ask = new System.Windows.Forms.Label();
+            this.Paragraph1_Title_Pageone_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph1_Content_Pageone_Ask = new System.Windows.Forms.Label();
+            this.Paragraph1_Content_Pageone_TextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NavBar_preview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Top_preview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_Select_Template
@@ -75,7 +95,8 @@
             this.comboBox_Select_Template.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Select_Template.FormattingEnabled = true;
             this.comboBox_Select_Template.Items.AddRange(new object[] {
-            "MDI Text Only"});
+            "MDI Text Only",
+            " "});
             this.comboBox_Select_Template.Location = new System.Drawing.Point(12, 25);
             this.comboBox_Select_Template.Name = "comboBox_Select_Template";
             this.comboBox_Select_Template.Size = new System.Drawing.Size(260, 21);
@@ -304,7 +325,7 @@
             // 
             // favicon_open
             // 
-            this.favicon_open.Title = "Choose an icon for the website tab";
+            this.favicon_open.Title = "Choose an icon for the website favicon";
             // 
             // ios_desktop_open
             // 
@@ -313,7 +334,7 @@
             // ios_png_ask
             // 
             this.ios_png_ask.AutoSize = true;
-            this.ios_png_ask.Location = new System.Drawing.Point(33, 9);
+            this.ios_png_ask.Location = new System.Drawing.Point(12, 9);
             this.ios_png_ask.Name = "ios_png_ask";
             this.ios_png_ask.Size = new System.Drawing.Size(103, 13);
             this.ios_png_ask.TabIndex = 22;
@@ -333,11 +354,11 @@
             // favicon_png_ask
             // 
             this.favicon_png_ask.AutoSize = true;
-            this.favicon_png_ask.Location = new System.Drawing.Point(31, 93);
+            this.favicon_png_ask.Location = new System.Drawing.Point(12, 93);
             this.favicon_png_ask.Name = "favicon_png_ask";
-            this.favicon_png_ask.Size = new System.Drawing.Size(105, 13);
+            this.favicon_png_ask.Size = new System.Drawing.Size(143, 13);
             this.favicon_png_ask.TabIndex = 24;
-            this.favicon_png_ask.Text = "choose a png for tab";
+            this.favicon_png_ask.Text = "choose a png for the favicon";
             this.favicon_png_ask.Visible = false;
             // 
             // ios_png_button
@@ -362,26 +383,26 @@
             this.android_png_button.Visible = false;
             this.android_png_button.Click += new System.EventHandler(this.android_png_button_Click);
             // 
-            // tab_png_button
+            // favicon_png_button
             // 
-            this.tab_png_button.Location = new System.Drawing.Point(61, 109);
-            this.tab_png_button.Name = "tab_png_button";
-            this.tab_png_button.Size = new System.Drawing.Size(75, 23);
-            this.tab_png_button.TabIndex = 27;
-            this.tab_png_button.Text = "Choose";
-            this.tab_png_button.UseVisualStyleBackColor = true;
-            this.tab_png_button.Visible = false;
-            this.tab_png_button.Click += new System.EventHandler(this.tab_png_button_Click);
+            this.favicon_png_button.Location = new System.Drawing.Point(61, 109);
+            this.favicon_png_button.Name = "favicon_png_button";
+            this.favicon_png_button.Size = new System.Drawing.Size(75, 23);
+            this.favicon_png_button.TabIndex = 27;
+            this.favicon_png_button.Text = "Choose";
+            this.favicon_png_button.UseVisualStyleBackColor = true;
+            this.favicon_png_button.Visible = false;
+            this.favicon_png_button.Click += new System.EventHandler(this.favicon_png_button_Click);
             // 
-            // got_file_tab
+            // got_file_favicon
             // 
-            this.got_file_tab.AutoSize = true;
-            this.got_file_tab.Location = new System.Drawing.Point(142, 114);
-            this.got_file_tab.Name = "got_file_tab";
-            this.got_file_tab.Size = new System.Drawing.Size(41, 13);
-            this.got_file_tab.TabIndex = 30;
-            this.got_file_tab.Text = "got file!";
-            this.got_file_tab.Visible = false;
+            this.got_file_favicon.AutoSize = true;
+            this.got_file_favicon.Location = new System.Drawing.Point(142, 114);
+            this.got_file_favicon.Name = "got_file_favicon";
+            this.got_file_favicon.Size = new System.Drawing.Size(41, 13);
+            this.got_file_favicon.TabIndex = 30;
+            this.got_file_favicon.Text = "got file!";
+            this.got_file_favicon.Visible = false;
             // 
             // got_file_android
             // 
@@ -403,6 +424,172 @@
             this.got_file_ios.Text = "got file!";
             this.got_file_ios.Visible = false;
             // 
+            // Navbar_colorDialog
+            // 
+            this.Navbar_colorDialog.AnyColor = true;
+            this.Navbar_colorDialog.FullOpen = true;
+            this.Navbar_colorDialog.SolidColorOnly = true;
+            // 
+            // NavBar_preview
+            // 
+            this.NavBar_preview.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.NavBar_preview.Location = new System.Drawing.Point(278, 52);
+            this.NavBar_preview.Name = "NavBar_preview";
+            this.NavBar_preview.Size = new System.Drawing.Size(276, 15);
+            this.NavBar_preview.TabIndex = 31;
+            this.NavBar_preview.TabStop = false;
+            this.NavBar_preview.Visible = false;
+            // 
+            // Top_preview
+            // 
+            this.Top_preview.Location = new System.Drawing.Point(278, 12);
+            this.Top_preview.Name = "Top_preview";
+            this.Top_preview.Size = new System.Drawing.Size(276, 44);
+            this.Top_preview.TabIndex = 32;
+            this.Top_preview.TabStop = false;
+            this.Top_preview.Visible = false;
+            // 
+            // navbar_colour_Button
+            // 
+            this.navbar_colour_Button.Location = new System.Drawing.Point(278, 73);
+            this.navbar_colour_Button.Name = "navbar_colour_Button";
+            this.navbar_colour_Button.Size = new System.Drawing.Size(276, 23);
+            this.navbar_colour_Button.TabIndex = 33;
+            this.navbar_colour_Button.Text = "Change navbar colour";
+            this.navbar_colour_Button.UseVisualStyleBackColor = true;
+            this.navbar_colour_Button.Visible = false;
+            this.navbar_colour_Button.Click += new System.EventHandler(this.navbar_colour_Button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(278, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 60);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // Paragraph_TextBox_Firstpage
+            // 
+            this.Paragraph_TextBox_Firstpage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph_TextBox_Firstpage.Location = new System.Drawing.Point(12, 25);
+            this.Paragraph_TextBox_Firstpage.Name = "Paragraph_TextBox_Firstpage";
+            this.Paragraph_TextBox_Firstpage.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph_TextBox_Firstpage.TabIndex = 39;
+            this.Paragraph_TextBox_Firstpage.Text = "";
+            this.Paragraph_TextBox_Firstpage.Visible = false;
+            // 
+            // Paragraph_Ask_Firstpage
+            // 
+            this.Paragraph_Ask_Firstpage.AutoSize = true;
+            this.Paragraph_Ask_Firstpage.Location = new System.Drawing.Point(5, 9);
+            this.Paragraph_Ask_Firstpage.Name = "Paragraph_Ask_Firstpage";
+            this.Paragraph_Ask_Firstpage.Size = new System.Drawing.Size(233, 13);
+            this.Paragraph_Ask_Firstpage.TabIndex = 38;
+            this.Paragraph_Ask_Firstpage.Text = "How much paragraphs do you what (first page)?";
+            this.Paragraph_Ask_Firstpage.Visible = false;
+            // 
+            // Paragraph_TextBox_Secondpage
+            // 
+            this.Paragraph_TextBox_Secondpage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph_TextBox_Secondpage.Location = new System.Drawing.Point(13, 65);
+            this.Paragraph_TextBox_Secondpage.Name = "Paragraph_TextBox_Secondpage";
+            this.Paragraph_TextBox_Secondpage.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph_TextBox_Secondpage.TabIndex = 42;
+            this.Paragraph_TextBox_Secondpage.Text = "";
+            this.Paragraph_TextBox_Secondpage.Visible = false;
+            // 
+            // Paragraph_Ask_Secondpage
+            // 
+            this.Paragraph_Ask_Secondpage.AutoSize = true;
+            this.Paragraph_Ask_Secondpage.Location = new System.Drawing.Point(5, 51);
+            this.Paragraph_Ask_Secondpage.Name = "Paragraph_Ask_Secondpage";
+            this.Paragraph_Ask_Secondpage.Size = new System.Drawing.Size(252, 13);
+            this.Paragraph_Ask_Secondpage.TabIndex = 41;
+            this.Paragraph_Ask_Secondpage.Text = "How much paragraphs do you what (second page)?";
+            this.Paragraph_Ask_Secondpage.Visible = false;
+            // 
+            // Paragraph_TextBox_Thirdpage
+            // 
+            this.Paragraph_TextBox_Thirdpage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph_TextBox_Thirdpage.Location = new System.Drawing.Point(8, 105);
+            this.Paragraph_TextBox_Thirdpage.Name = "Paragraph_TextBox_Thirdpage";
+            this.Paragraph_TextBox_Thirdpage.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph_TextBox_Thirdpage.TabIndex = 45;
+            this.Paragraph_TextBox_Thirdpage.Text = "";
+            this.Paragraph_TextBox_Thirdpage.Visible = false;
+            // 
+            // Paragraph_Ask_Thirdpage
+            // 
+            this.Paragraph_Ask_Thirdpage.AutoSize = true;
+            this.Paragraph_Ask_Thirdpage.Location = new System.Drawing.Point(5, 93);
+            this.Paragraph_Ask_Thirdpage.Name = "Paragraph_Ask_Thirdpage";
+            this.Paragraph_Ask_Thirdpage.Size = new System.Drawing.Size(237, 13);
+            this.Paragraph_Ask_Thirdpage.TabIndex = 44;
+            this.Paragraph_Ask_Thirdpage.Text = "How much paragraphs do you what (third page)?";
+            this.Paragraph_Ask_Thirdpage.Visible = false;
+            // 
+            // Paragraph_TextBox_Fourthpage
+            // 
+            this.Paragraph_TextBox_Fourthpage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph_TextBox_Fourthpage.Location = new System.Drawing.Point(12, 148);
+            this.Paragraph_TextBox_Fourthpage.Name = "Paragraph_TextBox_Fourthpage";
+            this.Paragraph_TextBox_Fourthpage.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph_TextBox_Fourthpage.TabIndex = 48;
+            this.Paragraph_TextBox_Fourthpage.Text = "";
+            this.Paragraph_TextBox_Fourthpage.Visible = false;
+            // 
+            // Paragraph_Ask_Fourthpage
+            // 
+            this.Paragraph_Ask_Fourthpage.AutoSize = true;
+            this.Paragraph_Ask_Fourthpage.Location = new System.Drawing.Point(5, 132);
+            this.Paragraph_Ask_Fourthpage.Name = "Paragraph_Ask_Fourthpage";
+            this.Paragraph_Ask_Fourthpage.Size = new System.Drawing.Size(241, 13);
+            this.Paragraph_Ask_Fourthpage.TabIndex = 47;
+            this.Paragraph_Ask_Fourthpage.Text = "How much paragraphs do you what fourth page)?";
+            this.Paragraph_Ask_Fourthpage.Visible = false;
+            // 
+            // Paragraph1_Title_Pageone_Ask
+            // 
+            this.Paragraph1_Title_Pageone_Ask.AutoSize = true;
+            this.Paragraph1_Title_Pageone_Ask.Location = new System.Drawing.Point(5, 9);
+            this.Paragraph1_Title_Pageone_Ask.Name = "Paragraph1_Title_Pageone_Ask";
+            this.Paragraph1_Title_Pageone_Ask.Size = new System.Drawing.Size(159, 13);
+            this.Paragraph1_Title_Pageone_Ask.TabIndex = 50;
+            this.Paragraph1_Title_Pageone_Ask.Text = "What will the paragraph title be?";
+            this.Paragraph1_Title_Pageone_Ask.Visible = false;
+            // 
+            // Paragraph1_Title_Pageone_TextBox
+            // 
+            this.Paragraph1_Title_Pageone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph1_Title_Pageone_TextBox.Location = new System.Drawing.Point(12, 25);
+            this.Paragraph1_Title_Pageone_TextBox.Name = "Paragraph1_Title_Pageone_TextBox";
+            this.Paragraph1_Title_Pageone_TextBox.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph1_Title_Pageone_TextBox.TabIndex = 49;
+            this.Paragraph1_Title_Pageone_TextBox.Text = "";
+            this.Paragraph1_Title_Pageone_TextBox.Visible = false;
+            // 
+            // Paragraph1_Content_Pageone_Ask
+            // 
+            this.Paragraph1_Content_Pageone_Ask.AutoSize = true;
+            this.Paragraph1_Content_Pageone_Ask.Location = new System.Drawing.Point(9, 49);
+            this.Paragraph1_Content_Pageone_Ask.Name = "Paragraph1_Content_Pageone_Ask";
+            this.Paragraph1_Content_Pageone_Ask.Size = new System.Drawing.Size(179, 13);
+            this.Paragraph1_Content_Pageone_Ask.TabIndex = 52;
+            this.Paragraph1_Content_Pageone_Ask.Text = "What will the paragraph content be?";
+            this.Paragraph1_Content_Pageone_Ask.Visible = false;
+            // 
+            // Paragraph1_Content_Pageone_TextBox
+            // 
+            this.Paragraph1_Content_Pageone_TextBox.Location = new System.Drawing.Point(8, 67);
+            this.Paragraph1_Content_Pageone_TextBox.Name = "Paragraph1_Content_Pageone_TextBox";
+            this.Paragraph1_Content_Pageone_TextBox.Size = new System.Drawing.Size(264, 146);
+            this.Paragraph1_Content_Pageone_TextBox.TabIndex = 51;
+            this.Paragraph1_Content_Pageone_TextBox.Text = "";
+            this.Paragraph1_Content_Pageone_TextBox.Visible = false;
+            // 
             // Materialize_Setup
             // 
             this.AcceptButton = this.Next_Button;
@@ -413,10 +600,21 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 251);
-            this.Controls.Add(this.got_file_tab);
+            this.Controls.Add(this.Paragraph1_Content_Pageone_Ask);
+            this.Controls.Add(this.Paragraph1_Content_Pageone_TextBox);
+            this.Controls.Add(this.Paragraph1_Title_Pageone_Ask);
+            this.Controls.Add(this.Paragraph_Ask_Fourthpage);
+            this.Controls.Add(this.Paragraph_Ask_Thirdpage);
+            this.Controls.Add(this.Paragraph_Ask_Secondpage);
+            this.Controls.Add(this.Paragraph_Ask_Firstpage);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.navbar_colour_Button);
+            this.Controls.Add(this.Top_preview);
+            this.Controls.Add(this.NavBar_preview);
+            this.Controls.Add(this.got_file_favicon);
             this.Controls.Add(this.got_file_android);
             this.Controls.Add(this.got_file_ios);
-            this.Controls.Add(this.tab_png_button);
+            this.Controls.Add(this.favicon_png_button);
             this.Controls.Add(this.android_png_button);
             this.Controls.Add(this.ios_png_button);
             this.Controls.Add(this.favicon_png_ask);
@@ -444,6 +642,11 @@
             this.Controls.Add(this.Website_Picture);
             this.Controls.Add(this.Website_Look_Ask);
             this.Controls.Add(this.comboBox_Select_Template);
+            this.Controls.Add(this.Paragraph_TextBox_Fourthpage);
+            this.Controls.Add(this.Paragraph_TextBox_Thirdpage);
+            this.Controls.Add(this.Paragraph_TextBox_Secondpage);
+            this.Controls.Add(this.Paragraph_TextBox_Firstpage);
+            this.Controls.Add(this.Paragraph1_Title_Pageone_TextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Materialize_Setup";
@@ -455,6 +658,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NavBar_preview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Top_preview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,9 +699,26 @@
         private System.Windows.Forms.Label favicon_png_ask;
         private System.Windows.Forms.Button ios_png_button;
         private System.Windows.Forms.Button android_png_button;
-        private System.Windows.Forms.Button tab_png_button;
-        private System.Windows.Forms.Label got_file_tab;
+        private System.Windows.Forms.Button favicon_png_button;
+        private System.Windows.Forms.Label got_file_favicon;
         private System.Windows.Forms.Label got_file_android;
         private System.Windows.Forms.Label got_file_ios;
+        private System.Windows.Forms.ColorDialog Navbar_colorDialog;
+        private System.Windows.Forms.PictureBox NavBar_preview;
+        private System.Windows.Forms.PictureBox Top_preview;
+        private System.Windows.Forms.Button navbar_colour_Button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox Paragraph_TextBox_Firstpage;
+        private System.Windows.Forms.Label Paragraph_Ask_Firstpage;
+        private System.Windows.Forms.RichTextBox Paragraph_TextBox_Secondpage;
+        private System.Windows.Forms.Label Paragraph_Ask_Secondpage;
+        private System.Windows.Forms.RichTextBox Paragraph_TextBox_Thirdpage;
+        private System.Windows.Forms.Label Paragraph_Ask_Thirdpage;
+        private System.Windows.Forms.RichTextBox Paragraph_TextBox_Fourthpage;
+        private System.Windows.Forms.Label Paragraph_Ask_Fourthpage;
+        private System.Windows.Forms.Label Paragraph1_Title_Pageone_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph1_Title_Pageone_TextBox;
+        private System.Windows.Forms.Label Paragraph1_Content_Pageone_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph1_Content_Pageone_TextBox;
     }
 }
