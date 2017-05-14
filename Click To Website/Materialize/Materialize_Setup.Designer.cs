@@ -76,10 +76,22 @@
             this.Paragraph_Ask_Thirdpage = new System.Windows.Forms.Label();
             this.Paragraph_TextBox_Fourthpage = new System.Windows.Forms.RichTextBox();
             this.Paragraph_Ask_Fourthpage = new System.Windows.Forms.Label();
-            this.Paragraph1_Title_Pageone_Ask = new System.Windows.Forms.Label();
-            this.Paragraph1_Title_Pageone_TextBox = new System.Windows.Forms.RichTextBox();
-            this.Paragraph1_Content_Pageone_Ask = new System.Windows.Forms.Label();
-            this.Paragraph1_Content_Pageone_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph1_Title_Ask = new System.Windows.Forms.Label();
+            this.Paragraph1_Title_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph1_Content_Ask = new System.Windows.Forms.Label();
+            this.Paragraph1_Content_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph2_Content_Ask = new System.Windows.Forms.Label();
+            this.Paragraph2_Content_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph2_Title_Ask = new System.Windows.Forms.Label();
+            this.Paragraph2_Title_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph3_Content_Ask = new System.Windows.Forms.Label();
+            this.Paragraph3_Content_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph3_Title_Ask = new System.Windows.Forms.Label();
+            this.Paragraph3_Title_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph4_Content_Ask = new System.Windows.Forms.Label();
+            this.Paragraph4_Content_TextBox = new System.Windows.Forms.RichTextBox();
+            this.Paragraph4_Title_Ask = new System.Windows.Forms.Label();
+            this.Paragraph4_Title_TextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).BeginInit();
@@ -551,44 +563,161 @@
             this.Paragraph_Ask_Fourthpage.Text = "How much paragraphs do you what fourth page)?";
             this.Paragraph_Ask_Fourthpage.Visible = false;
             // 
-            // Paragraph1_Title_Pageone_Ask
+            // Paragraph1_Title_Ask
             // 
-            this.Paragraph1_Title_Pageone_Ask.AutoSize = true;
-            this.Paragraph1_Title_Pageone_Ask.Location = new System.Drawing.Point(5, 9);
-            this.Paragraph1_Title_Pageone_Ask.Name = "Paragraph1_Title_Pageone_Ask";
-            this.Paragraph1_Title_Pageone_Ask.Size = new System.Drawing.Size(159, 13);
-            this.Paragraph1_Title_Pageone_Ask.TabIndex = 50;
-            this.Paragraph1_Title_Pageone_Ask.Text = "What will the paragraph title be?";
-            this.Paragraph1_Title_Pageone_Ask.Visible = false;
+            this.Paragraph1_Title_Ask.AutoSize = true;
+            this.Paragraph1_Title_Ask.Location = new System.Drawing.Point(5, 9);
+            this.Paragraph1_Title_Ask.Name = "Paragraph1_Title_Ask";
+            this.Paragraph1_Title_Ask.Size = new System.Drawing.Size(159, 13);
+            this.Paragraph1_Title_Ask.TabIndex = 50;
+            this.Paragraph1_Title_Ask.Text = "What will the paragraph title be?";
+            this.Paragraph1_Title_Ask.Visible = false;
             // 
-            // Paragraph1_Title_Pageone_TextBox
+            // Paragraph1_Title_TextBox
             // 
-            this.Paragraph1_Title_Pageone_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Paragraph1_Title_Pageone_TextBox.Location = new System.Drawing.Point(12, 25);
-            this.Paragraph1_Title_Pageone_TextBox.Name = "Paragraph1_Title_Pageone_TextBox";
-            this.Paragraph1_Title_Pageone_TextBox.Size = new System.Drawing.Size(215, 21);
-            this.Paragraph1_Title_Pageone_TextBox.TabIndex = 49;
-            this.Paragraph1_Title_Pageone_TextBox.Text = "";
-            this.Paragraph1_Title_Pageone_TextBox.Visible = false;
+            this.Paragraph1_Title_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph1_Title_TextBox.Location = new System.Drawing.Point(12, 25);
+            this.Paragraph1_Title_TextBox.Name = "Paragraph1_Title_TextBox";
+            this.Paragraph1_Title_TextBox.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph1_Title_TextBox.TabIndex = 49;
+            this.Paragraph1_Title_TextBox.Text = "";
+            this.Paragraph1_Title_TextBox.Visible = false;
             // 
-            // Paragraph1_Content_Pageone_Ask
+            // Paragraph1_Content_Ask
             // 
-            this.Paragraph1_Content_Pageone_Ask.AutoSize = true;
-            this.Paragraph1_Content_Pageone_Ask.Location = new System.Drawing.Point(9, 49);
-            this.Paragraph1_Content_Pageone_Ask.Name = "Paragraph1_Content_Pageone_Ask";
-            this.Paragraph1_Content_Pageone_Ask.Size = new System.Drawing.Size(179, 13);
-            this.Paragraph1_Content_Pageone_Ask.TabIndex = 52;
-            this.Paragraph1_Content_Pageone_Ask.Text = "What will the paragraph content be?";
-            this.Paragraph1_Content_Pageone_Ask.Visible = false;
+            this.Paragraph1_Content_Ask.AutoSize = true;
+            this.Paragraph1_Content_Ask.Location = new System.Drawing.Point(9, 49);
+            this.Paragraph1_Content_Ask.Name = "Paragraph1_Content_Ask";
+            this.Paragraph1_Content_Ask.Size = new System.Drawing.Size(179, 13);
+            this.Paragraph1_Content_Ask.TabIndex = 52;
+            this.Paragraph1_Content_Ask.Text = "What will the paragraph content be?";
+            this.Paragraph1_Content_Ask.Visible = false;
             // 
-            // Paragraph1_Content_Pageone_TextBox
+            // Paragraph1_Content_TextBox
             // 
-            this.Paragraph1_Content_Pageone_TextBox.Location = new System.Drawing.Point(8, 67);
-            this.Paragraph1_Content_Pageone_TextBox.Name = "Paragraph1_Content_Pageone_TextBox";
-            this.Paragraph1_Content_Pageone_TextBox.Size = new System.Drawing.Size(264, 146);
-            this.Paragraph1_Content_Pageone_TextBox.TabIndex = 51;
-            this.Paragraph1_Content_Pageone_TextBox.Text = "";
-            this.Paragraph1_Content_Pageone_TextBox.Visible = false;
+            this.Paragraph1_Content_TextBox.Location = new System.Drawing.Point(8, 67);
+            this.Paragraph1_Content_TextBox.Name = "Paragraph1_Content_TextBox";
+            this.Paragraph1_Content_TextBox.Size = new System.Drawing.Size(264, 146);
+            this.Paragraph1_Content_TextBox.TabIndex = 51;
+            this.Paragraph1_Content_TextBox.Text = "";
+            this.Paragraph1_Content_TextBox.Visible = false;
+            // 
+            // Paragraph2_Content_Ask
+            // 
+            this.Paragraph2_Content_Ask.AutoSize = true;
+            this.Paragraph2_Content_Ask.Location = new System.Drawing.Point(279, 49);
+            this.Paragraph2_Content_Ask.Name = "Paragraph2_Content_Ask";
+            this.Paragraph2_Content_Ask.Size = new System.Drawing.Size(179, 13);
+            this.Paragraph2_Content_Ask.TabIndex = 56;
+            this.Paragraph2_Content_Ask.Text = "What will the paragraph content be?";
+            this.Paragraph2_Content_Ask.Visible = false;
+            // 
+            // Paragraph2_Content_TextBox
+            // 
+            this.Paragraph2_Content_TextBox.Location = new System.Drawing.Point(278, 67);
+            this.Paragraph2_Content_TextBox.Name = "Paragraph2_Content_TextBox";
+            this.Paragraph2_Content_TextBox.Size = new System.Drawing.Size(264, 146);
+            this.Paragraph2_Content_TextBox.TabIndex = 55;
+            this.Paragraph2_Content_TextBox.Text = "";
+            this.Paragraph2_Content_TextBox.Visible = false;
+            // 
+            // Paragraph2_Title_Ask
+            // 
+            this.Paragraph2_Title_Ask.AutoSize = true;
+            this.Paragraph2_Title_Ask.Location = new System.Drawing.Point(275, 9);
+            this.Paragraph2_Title_Ask.Name = "Paragraph2_Title_Ask";
+            this.Paragraph2_Title_Ask.Size = new System.Drawing.Size(159, 13);
+            this.Paragraph2_Title_Ask.TabIndex = 54;
+            this.Paragraph2_Title_Ask.Text = "What will the paragraph title be?";
+            this.Paragraph2_Title_Ask.Visible = false;
+            // 
+            // Paragraph2_Title_TextBox
+            // 
+            this.Paragraph2_Title_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph2_Title_TextBox.Location = new System.Drawing.Point(282, 25);
+            this.Paragraph2_Title_TextBox.Name = "Paragraph2_Title_TextBox";
+            this.Paragraph2_Title_TextBox.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph2_Title_TextBox.TabIndex = 53;
+            this.Paragraph2_Title_TextBox.Text = "";
+            this.Paragraph2_Title_TextBox.Visible = false;
+            // 
+            // Paragraph3_Content_Ask
+            // 
+            this.Paragraph3_Content_Ask.AutoSize = true;
+            this.Paragraph3_Content_Ask.Location = new System.Drawing.Point(548, 49);
+            this.Paragraph3_Content_Ask.Name = "Paragraph3_Content_Ask";
+            this.Paragraph3_Content_Ask.Size = new System.Drawing.Size(179, 13);
+            this.Paragraph3_Content_Ask.TabIndex = 60;
+            this.Paragraph3_Content_Ask.Text = "What will the paragraph content be?";
+            this.Paragraph3_Content_Ask.Visible = false;
+            // 
+            // Paragraph3_Content_TextBox
+            // 
+            this.Paragraph3_Content_TextBox.Location = new System.Drawing.Point(547, 67);
+            this.Paragraph3_Content_TextBox.Name = "Paragraph3_Content_TextBox";
+            this.Paragraph3_Content_TextBox.Size = new System.Drawing.Size(264, 146);
+            this.Paragraph3_Content_TextBox.TabIndex = 59;
+            this.Paragraph3_Content_TextBox.Text = "";
+            this.Paragraph3_Content_TextBox.Visible = false;
+            // 
+            // Paragraph3_Title_Ask
+            // 
+            this.Paragraph3_Title_Ask.AutoSize = true;
+            this.Paragraph3_Title_Ask.Location = new System.Drawing.Point(544, 9);
+            this.Paragraph3_Title_Ask.Name = "Paragraph3_Title_Ask";
+            this.Paragraph3_Title_Ask.Size = new System.Drawing.Size(159, 13);
+            this.Paragraph3_Title_Ask.TabIndex = 58;
+            this.Paragraph3_Title_Ask.Text = "What will the paragraph title be?";
+            this.Paragraph3_Title_Ask.Visible = false;
+            // 
+            // Paragraph3_Title_TextBox
+            // 
+            this.Paragraph3_Title_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph3_Title_TextBox.Location = new System.Drawing.Point(551, 25);
+            this.Paragraph3_Title_TextBox.Name = "Paragraph3_Title_TextBox";
+            this.Paragraph3_Title_TextBox.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph3_Title_TextBox.TabIndex = 57;
+            this.Paragraph3_Title_TextBox.Text = "";
+            this.Paragraph3_Title_TextBox.Visible = false;
+            // 
+            // Paragraph4_Content_Ask
+            // 
+            this.Paragraph4_Content_Ask.AutoSize = true;
+            this.Paragraph4_Content_Ask.Location = new System.Drawing.Point(818, 49);
+            this.Paragraph4_Content_Ask.Name = "Paragraph4_Content_Ask";
+            this.Paragraph4_Content_Ask.Size = new System.Drawing.Size(179, 13);
+            this.Paragraph4_Content_Ask.TabIndex = 64;
+            this.Paragraph4_Content_Ask.Text = "What will the paragraph content be?";
+            this.Paragraph4_Content_Ask.Visible = false;
+            // 
+            // Paragraph4_Content_TextBox
+            // 
+            this.Paragraph4_Content_TextBox.Location = new System.Drawing.Point(817, 67);
+            this.Paragraph4_Content_TextBox.Name = "Paragraph4_Content_TextBox";
+            this.Paragraph4_Content_TextBox.Size = new System.Drawing.Size(264, 146);
+            this.Paragraph4_Content_TextBox.TabIndex = 63;
+            this.Paragraph4_Content_TextBox.Text = "";
+            this.Paragraph4_Content_TextBox.Visible = false;
+            // 
+            // Paragraph4_Title_Ask
+            // 
+            this.Paragraph4_Title_Ask.AutoSize = true;
+            this.Paragraph4_Title_Ask.Location = new System.Drawing.Point(814, 9);
+            this.Paragraph4_Title_Ask.Name = "Paragraph4_Title_Ask";
+            this.Paragraph4_Title_Ask.Size = new System.Drawing.Size(159, 13);
+            this.Paragraph4_Title_Ask.TabIndex = 62;
+            this.Paragraph4_Title_Ask.Text = "What will the paragraph title be?";
+            this.Paragraph4_Title_Ask.Visible = false;
+            // 
+            // Paragraph4_Title_TextBox
+            // 
+            this.Paragraph4_Title_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Paragraph4_Title_TextBox.Location = new System.Drawing.Point(821, 25);
+            this.Paragraph4_Title_TextBox.Name = "Paragraph4_Title_TextBox";
+            this.Paragraph4_Title_TextBox.Size = new System.Drawing.Size(215, 21);
+            this.Paragraph4_Title_TextBox.TabIndex = 61;
+            this.Paragraph4_Title_TextBox.Text = "";
+            this.Paragraph4_Title_TextBox.Visible = false;
             // 
             // Materialize_Setup
             // 
@@ -599,10 +728,22 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(284, 251);
-            this.Controls.Add(this.Paragraph1_Content_Pageone_Ask);
-            this.Controls.Add(this.Paragraph1_Content_Pageone_TextBox);
-            this.Controls.Add(this.Paragraph1_Title_Pageone_Ask);
+            this.ClientSize = new System.Drawing.Size(1079, 251);
+            this.Controls.Add(this.Paragraph4_Content_Ask);
+            this.Controls.Add(this.Paragraph4_Content_TextBox);
+            this.Controls.Add(this.Paragraph4_Title_Ask);
+            this.Controls.Add(this.Paragraph4_Title_TextBox);
+            this.Controls.Add(this.Paragraph3_Content_Ask);
+            this.Controls.Add(this.Paragraph3_Content_TextBox);
+            this.Controls.Add(this.Paragraph3_Title_Ask);
+            this.Controls.Add(this.Paragraph3_Title_TextBox);
+            this.Controls.Add(this.Paragraph2_Content_Ask);
+            this.Controls.Add(this.Paragraph2_Content_TextBox);
+            this.Controls.Add(this.Paragraph2_Title_Ask);
+            this.Controls.Add(this.Paragraph2_Title_TextBox);
+            this.Controls.Add(this.Paragraph1_Content_Ask);
+            this.Controls.Add(this.Paragraph1_Content_TextBox);
+            this.Controls.Add(this.Paragraph1_Title_Ask);
             this.Controls.Add(this.Paragraph_Ask_Fourthpage);
             this.Controls.Add(this.Paragraph_Ask_Thirdpage);
             this.Controls.Add(this.Paragraph_Ask_Secondpage);
@@ -646,7 +787,7 @@
             this.Controls.Add(this.Paragraph_TextBox_Thirdpage);
             this.Controls.Add(this.Paragraph_TextBox_Secondpage);
             this.Controls.Add(this.Paragraph_TextBox_Firstpage);
-            this.Controls.Add(this.Paragraph1_Title_Pageone_TextBox);
+            this.Controls.Add(this.Paragraph1_Title_TextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Materialize_Setup";
@@ -716,9 +857,21 @@
         private System.Windows.Forms.Label Paragraph_Ask_Thirdpage;
         private System.Windows.Forms.RichTextBox Paragraph_TextBox_Fourthpage;
         private System.Windows.Forms.Label Paragraph_Ask_Fourthpage;
-        private System.Windows.Forms.Label Paragraph1_Title_Pageone_Ask;
-        private System.Windows.Forms.RichTextBox Paragraph1_Title_Pageone_TextBox;
-        private System.Windows.Forms.Label Paragraph1_Content_Pageone_Ask;
-        private System.Windows.Forms.RichTextBox Paragraph1_Content_Pageone_TextBox;
+        private System.Windows.Forms.Label Paragraph1_Title_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph1_Title_TextBox;
+        private System.Windows.Forms.Label Paragraph1_Content_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph1_Content_TextBox;
+        private System.Windows.Forms.Label Paragraph2_Content_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph2_Content_TextBox;
+        private System.Windows.Forms.Label Paragraph2_Title_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph2_Title_TextBox;
+        private System.Windows.Forms.Label Paragraph3_Content_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph3_Content_TextBox;
+        private System.Windows.Forms.Label Paragraph3_Title_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph3_Title_TextBox;
+        private System.Windows.Forms.Label Paragraph4_Content_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph4_Content_TextBox;
+        private System.Windows.Forms.Label Paragraph4_Title_Ask;
+        private System.Windows.Forms.RichTextBox Paragraph4_Title_TextBox;
     }
 }

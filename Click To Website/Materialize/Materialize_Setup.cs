@@ -14,7 +14,6 @@ using System.IO;//
 
 /// <summary>
 /// To Do:
-///1. maybe make it to be able to change Contents side bar and background color.
 ///2. able to change text+links on the footer.
 ///3. able to change the text in pages (last thing to do)
 /// </summary>
@@ -39,7 +38,6 @@ namespace Click_To_Website
         //Itn's used to make sure everything have been completed
         public int TemplateUsed = 0;
         public int PagesFail = 0;
-        public  int ParagraphFail = 0;
         public int Pages = 0;
         public int AllFilledIn = 0;
         public int R = 81;
@@ -49,9 +47,49 @@ namespace Click_To_Website
         public int Paragraph2 = 0;
         public int Paragraph3 = 0;
         public int Paragraph4 = 0;
-        public string Paragraph1_Content_Pageone = "";
+
+        #region Paragraph Content+Titles
         public string Paragraph1_Title_Pageone = "";
-        public string Content_List = "";
+        public string Paragraph1_Content_Pageone = "";
+        public string Paragraph2_Title_Pageone = "";
+        public string Paragraph2_Content_Pageone = "";
+        public string Paragraph3_Title_Pageone = "";
+        public string Paragraph3_Content_Pageone = "";
+        public string Paragraph4_Title_Pageone = "";
+        public string Paragraph4_Content_Pageone = "";
+
+        public string Paragraph1_Title_Pagetwo = "";
+        public string Paragraph1_Content_Pagetwo = "";
+        public string Paragraph2_Title_Pagetwo = "";
+        public string Paragraph2_Content_Pagetwo = "";
+        public string Paragraph3_Title_Pagetwo = "";
+        public string Paragraph3_Content_Pagetwo = "";
+        public string Paragraph4_Title_Pagetwo = "";
+        public string Paragraph4_Content_Pagetwo = "";
+
+        public string Paragraph1_Title_Pagethree = "";
+        public string Paragraph1_Content_Pagethree = "";
+        public string Paragraph2_Title_Pagethree = "";
+        public string Paragraph2_Content_Pagethree = "";
+        public string Paragraph3_Title_Pagethree = "";
+        public string Paragraph3_Content_Pagethree = "";
+        public string Paragraph4_Title_Pagethree = "";
+        public string Paragraph4_Content_Pagethree = "";
+
+        public string Paragraph1_Title_Pagefour = "";
+        public string Paragraph1_Content_Pagefour = "";
+        public string Paragraph2_Title_Pagefour = "";
+        public string Paragraph2_Content_Pagefour = "";
+        public string Paragraph3_Title_Pagefour = "";
+        public string Paragraph3_Content_Pagefour = "";
+        public string Paragraph4_Title_Pagefour = "";
+        public string Paragraph4_Content_Pagefour = "";
+
+        public string Content_List_Pageone = "";
+        public string Content_List_Pagetwo = "";
+        public string Content_List_Pagethree = "";
+        public string Content_List_Pagefour = "";
+        #endregion
 
         public Materialize_Setup()
         {
@@ -132,6 +170,11 @@ namespace Click_To_Website
                     MessageBox.Show("Put in a (number) for how much pages you what", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     PagesFail = 1;
                 }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("THAT IS WAYYYYYYY TO MUCH PAGES!", "Click To Website", MessageBoxButtons.OK , MessageBoxIcon.Error);
+                    PagesFail = 1;
+                }
 
                 if (PagesFail == 0)
                 {
@@ -146,7 +189,6 @@ namespace Click_To_Website
                     else if (Description_TextBox.Text.Length >= 1 && Title_TextBox.Text.Length >= 1)
                     {
                         //Taking stuff off the screen...
-                        Next_Button.Text = "Make your website!";
                         Description_Ask.Visible = false;
                         Description_TextBox.Visible = false;
                         Title_Ask.Visible = false;
@@ -207,22 +249,64 @@ namespace Click_To_Website
                 Paragraph_Ask_Firstpage.Visible = true;
                 Paragraph_TextBox_Firstpage.Visible = true;
             }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == false && Page4_Name_TextBox.Visible == false)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                Paragraph_Ask_Firstpage.Visible = true;
+                Paragraph_TextBox_Firstpage.Visible = true;
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == false)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                Page3_Name_Ask.Visible = false;
+                Page3_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                TextBar_3.Visible = false;
+                Paragraph_Ask_Firstpage.Visible = true;
+                Paragraph_TextBox_Firstpage.Visible = true;
+            }
+            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == true && Page4_Name_TextBox.Text.Length >= 1)
+            {
+                Page1_Name_Ask.Visible = false;
+                Page1_Name_TextBox.Visible = false;
+                Page2_Name_Ask.Visible = false;
+                Page2_Name_TextBox.Visible = false;
+                Page3_Name_Ask.Visible = false;
+                Page3_Name_TextBox.Visible = false;
+                Page4_Name_Ask.Visible = false;
+                Page4_Name_TextBox.Visible = false;
+                TextBar_2.Visible = false;
+                TextBar_3.Visible = false;
+                TextBar_4.Visible = false;
+                Paragraph_Ask_Firstpage.Visible = true;
+                Paragraph_TextBox_Firstpage.Visible = true;
+            }
             else if (Paragraph_Ask_Firstpage.Visible == true && Paragraph_TextBox_Firstpage.Visible == true && Paragraph_Ask_Secondpage.Visible == false)
             {
                 try
                 {
+                    Paragraph1 = Convert.ToInt32(Paragraph_TextBox_Firstpage.Text);
                     if (Paragraph_TextBox_Firstpage.Text.Length == 0)
                     {
                         MessageBox.Show("You need to tell be how much paragraphs you what in page one", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    else if (Convert.ToInt32(Paragraph_TextBox_Firstpage.Text) >= 5)
+                    else if (Paragraph1 >= 4)
                     {
-                        MessageBox.Show("You can't do more then 4 paragraphs (for now...)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("You can't do more then 3 paragraphs (for now...)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else if (Paragraph1 == 0)
+                    {
+                        MessageBox.Show("You can't no paragraphs!", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
-                        Paragraph1 = Convert.ToInt32(Paragraph_TextBox_Firstpage.Text);
-                        ParagraphFail = 0;
                         Paragraph_Ask_Firstpage.Visible = false;
                         Paragraph_TextBox_Firstpage.Visible = false;
                         if (Paragraph1 == 1)
@@ -230,44 +314,80 @@ namespace Click_To_Website
                             this.Size = new Size(300, 290);
                             Next_Button.Location = new Point(12, 217);
                             Next_Button.Size = new Size(260, 23);
-                            Paragraph1_Title_Pageone_Ask.Visible = true;
-                            Paragraph1_Title_Pageone_TextBox.Visible = true;
-                            Paragraph1_Content_Pageone_Ask.Visible = true;
-                            Paragraph1_Content_Pageone_TextBox.Visible = true;
+                            Paragraph1_Title_Ask.Visible = true;
+                            Paragraph1_Title_TextBox.Visible = true;
+                            Paragraph1_Content_Ask.Visible = true;
+                            Paragraph1_Content_TextBox.Visible = true;
+                        }
+                        if (Paragraph1 == 2)
+                        {
+                            this.Size = new Size(570, 290);
+                            Next_Button.Location = new Point(12, 217);
+                            Next_Button.Size = new Size(260, 23);
+                            Paragraph1_Title_Ask.Visible = true;
+                            Paragraph1_Title_TextBox.Visible = true;
+                            Paragraph1_Content_Ask.Visible = true;
+                            Paragraph1_Content_TextBox.Visible = true;
+                            Paragraph2_Title_Ask.Visible = true;
+                            Paragraph2_Title_TextBox.Visible = true;
+                            Paragraph2_Content_Ask.Visible = true;
+                            Paragraph2_Content_TextBox.Visible = true;
+                        }
+                        if (Paragraph1 == 3)
+                        {
+                            this.Size = new Size(850, 290);
+                            Next_Button.Location = new Point(12, 217);
+                            Next_Button.Size = new Size(260, 23);
+                            Paragraph1_Title_Ask.Visible = true;
+                            Paragraph1_Title_TextBox.Visible = true;
+                            Paragraph1_Content_Ask.Visible = true;
+                            Paragraph1_Content_TextBox.Visible = true;
+                            Paragraph2_Title_Ask.Visible = true;
+                            Paragraph2_Title_TextBox.Visible = true;
+                            Paragraph2_Content_Ask.Visible = true;
+                            Paragraph2_Content_TextBox.Visible = true;
+                            Paragraph3_Title_Ask.Visible = true;
+                            Paragraph3_Title_TextBox.Visible = true;
+                            Paragraph3_Content_Ask.Visible = true;
+                            Paragraph3_Content_TextBox.Visible = true;
                         }
                     }
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Put in a number", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ParagraphFail = 1;
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("THAT IS WAYYYYYYY TO MUCH PARAGRAPHS!", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (Paragraph1_Content_Pageone_Ask.Visible == true && Paragraph1_Content_Pageone_TextBox.Visible == true) //Add Paragragh2 SOON!
+            else if (Paragraph1_Content_Ask.Visible == true && Paragraph1_Content_TextBox.Visible == true && Paragraph2_Content_Ask.Visible == false)
             {
-                if (Paragraph1_Content_Pageone_TextBox.Text.Length == 0 && Paragraph1_Title_Pageone_TextBox.Text.Length == 0)
+                if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0)
                 {
-                    MessageBox.Show("Fill in the title and the content of the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Fill in the title and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (Paragraph1_Content_Pageone_TextBox.Text.Length >= 1 && Paragraph1_Title_Pageone_TextBox.Text.Length == 0)
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0)
                 {
                     MessageBox.Show("Fill in the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (Paragraph1_Content_Pageone_TextBox.Text.Length == 0 && Paragraph1_Title_Pageone_TextBox.Text.Length >= 1)
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1)
                 {
-                    MessageBox.Show("Fill in the content of the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Fill in the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    Paragraph1_Content_Pageone = Paragraph1_Content_Pageone_TextBox.ToString();
-                    Paragraph1_Title_Pageone = Paragraph1_Title_Pageone_TextBox.ToString();
+                    Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
+                    Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
 
-                    Content_List =
-"                <a href =\"#" + Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") + "</a>";
-                    Paragraph1_Title_Pageone_Ask.Visible = false;
-                    Paragraph1_Title_Pageone_TextBox.Visible = false;
-                    Paragraph1_Content_Pageone_Ask.Visible = false;
-                    Paragraph1_Content_Pageone_TextBox.Visible = false;
+                    Content_List_Pageone =
+"                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>";
+
+                    Paragraph1_Title_Ask.Visible = false;
+                    Paragraph1_Title_TextBox.Visible = false;
+                    Paragraph1_Content_Ask.Visible = false;
+                    Paragraph1_Content_TextBox.Visible = false;
                     TextBar_1.Visible = false;
 
                     ios_png_ask.Visible = true;
@@ -276,6 +396,373 @@ namespace Click_To_Website
                     android_png_button.Visible = true;
                     favicon_png_ask.Visible = true;
                     favicon_png_button.Visible = true;
+                    Next_Button.Text = "Make your Website!";
+                    //Making evrything where it should be and resizing the form
+                    Next_Button.Location = new Point(12, 135);
+                    Next_Button.Size = new Size(215, 23);
+                    this.Size = new Size(255, 210);
+                }
+            }
+            else if (Paragraph1_Content_Ask.Visible == true && Paragraph1_Content_TextBox.Visible == true && Paragraph2_Content_Ask.Visible == true && Paragraph2_Title_Ask.Visible == true && Paragraph3_Content_Ask.Visible == false)
+            {
+                if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content of the second paragraph and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content for the second paragraph and the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph and the title for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >=1 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
+                    Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
+                    Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
+                    Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
+
+                    Content_List_Pageone =
+"                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>";
+                    Paragraph1_Title_Ask.Visible = false;
+                    Paragraph1_Title_TextBox.Visible = false;
+                    Paragraph1_Content_Ask.Visible = false;
+                    Paragraph1_Content_TextBox.Visible = false;
+                    TextBar_1.Visible = false;
+                    Paragraph2_Title_Ask.Visible = false;
+                    Paragraph2_Title_TextBox.Visible = false;
+                    Paragraph2_Content_Ask.Visible = false;
+                    Paragraph2_Content_TextBox.Visible = false;
+                    TextBar_2.Visible = false;
+
+                    ios_png_ask.Visible = true;
+                    ios_png_button.Visible = true;
+                    android_png_ask.Visible = true;
+                    android_png_button.Visible = true;
+                    favicon_png_ask.Visible = true;
+                    favicon_png_button.Visible = true;
+                    Next_Button.Text = "Make your Website!";
+                    //Making evrything where it should be and resizing the form
+                    Next_Button.Location = new Point(12, 135);
+                    Next_Button.Size = new Size(215, 23);
+                    this.Size = new Size(255, 210);
+                }
+            }
+            else if (Paragraph1_Content_Ask.Visible == true && Paragraph1_Content_TextBox.Visible == true && Paragraph2_Content_Ask.Visible == true && Paragraph2_Title_Ask.Visible == true && Paragraph3_Content_Ask.Visible == true && Paragraph3_Title_Ask.Visible == true)
+            {
+                if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the second paragraph and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the second paragraph and the title for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and the content for the first paragraph and the title for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph and the content for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph and the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content and title for the first, second and third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content and title for the second and third paragraph and fill in the content for the first paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content and title for the second and third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content and title for the third paragraph and just the content of the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content and title for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first and third paragraph and the title for the second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph and the title for the first and third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the first and second paragraph and the title for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the first paragraph and the title for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first and third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the first paragraph and the title and content for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and content for the third paragraph and fill in the content for the first and second paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the first, second and third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the first paragraph, fill in the title for the second paragraph and fill the title and content third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph and fill in the title and content for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph and fill in the content for the third paragraph", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph and fill in the title and content for the second and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the second paragraph and fill in the title and content for the first and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph and fill in the title and content for the first and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the third paragraph and fill in the title and content for the first and second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the third paragraph and fill in the title and content for the first and second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the third paragraph, fill in the content for the first paragraph and fill in the title and content for the second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first and third paragraph and fill in the title and content for the second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first and second paragraph and fill in the title and content for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph ,fill in the content for the second paragraph and fill in the title and content for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the first and third paragraph and fill in the title and content for the second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title for the first paragraph ,fill in the title and content for the second paragraph and fill in the content for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the third paragraph ,fill in the title and content for the first paragraph and fill in the content for the second paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and content for the first and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and content for the first paragraph and fill in the content for the second and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and content for the first paragraph and fill in the title for the second and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and content for the first paragraph ,fill in the title for the second paragraph and fill in the content for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the title and content for the second paragraph and fill in the content for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and content for the second paragraph and fill in the title for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length == 0 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph and fill in the title for the second and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title and content for the third paragraph and fill in the title for the first paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the second and third paragraph and fill in the title for the first paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length == 0 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length == 0 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for all the paragraphs");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the title for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Fill in the content for the second paragraph and fill in the title for the third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length == 0 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length == 0 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    MessageBox.Show("Fill in the content for the second and third paragraph");
+                }
+                else if (Paragraph1_Content_TextBox.Text.Length >= 1 && Paragraph1_Title_TextBox.Text.Length >= 1 && Paragraph2_Content_TextBox.Text.Length >= 1 && Paragraph2_Title_TextBox.Text.Length >= 1 && Paragraph3_Content_TextBox.Text.Length >= 1 && Paragraph3_Title_TextBox.Text.Length >= 1)
+                {
+                    Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
+                    Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
+                    Paragraph2_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
+                    Paragraph2_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
+                    Paragraph3_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
+                    Paragraph3_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
+
+                    Content_List_Pageone =
+"                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
+
+                    Paragraph1_Title_Ask.Visible = false;
+                    Paragraph1_Title_TextBox.Visible = false;
+                    Paragraph1_Content_Ask.Visible = false;
+                    Paragraph1_Content_TextBox.Visible = false;
+                    TextBar_1.Visible = false;
+                    Paragraph2_Title_Ask.Visible = false;
+                    Paragraph2_Title_TextBox.Visible = false;
+                    Paragraph2_Content_Ask.Visible = false;
+                    Paragraph2_Content_TextBox.Visible = false;
+                    TextBar_2.Visible = false;
+                    Paragraph3_Title_Ask.Visible = false;
+                    Paragraph3_Title_TextBox.Visible = false;
+                    Paragraph3_Content_Ask.Visible = false;
+                    Paragraph3_Content_TextBox.Visible = false;
+                    TextBar_3.Visible = false;
+
+                    ios_png_ask.Visible = true;
+                    ios_png_button.Visible = true;
+                    android_png_ask.Visible = true;
+                    android_png_button.Visible = true;
+                    favicon_png_ask.Visible = true;
+                    favicon_png_button.Visible = true;
+                    Next_Button.Text = "Make your Website!";
                     //Making evrything where it should be and resizing the form
                     Next_Button.Location = new Point(12, 135);
                     Next_Button.Size = new Size(215, 23);
@@ -298,6 +785,7 @@ namespace Click_To_Website
                 android_png_button.Visible = true;
                 favicon_png_ask.Visible = true;
                 favicon_png_button.Visible = true;
+                Next_Button.Text = "Make your Website!";
                 //Making evrything where it should be and resizing the form
                 Next_Button.Location = new Point(12, 135);
                 Next_Button.Size = new Size(215, 23);
@@ -320,31 +808,7 @@ namespace Click_To_Website
                 android_png_button.Visible = true;
                 favicon_png_ask.Visible = true;
                 favicon_png_button.Visible = true;
-            }
-            else if (Page1_Name_TextBox.Visible == true && Page1_Name_TextBox.Text.Length >= 1 && Page2_Name_TextBox.Visible == true && Page2_Name_TextBox.Text.Length >= 1 && Page3_Name_TextBox.Visible == true && Page3_Name_TextBox.Text.Length >= 1 && Page4_Name_TextBox.Visible == true && Page4_Name_TextBox.Text.Length >= 1)
-            {
-                Page1_Name_Ask.Visible = false;
-                Page1_Name_TextBox.Visible = false;
-                TextBar_1.Visible = false;
-                Page2_Name_Ask.Visible = false;
-                Page2_Name_TextBox.Visible = false;
-                TextBar_2.Visible = false;
-                Page3_Name_Ask.Visible = false;
-                Page3_Name_TextBox.Visible = false;
-                TextBar_3.Visible = false;
-                Page4_Name_Ask.Visible = false;
-                Page4_Name_TextBox.Visible = false;
-                TextBar_4.Visible = false;
-                ios_png_ask.Visible = true;
-                ios_png_button.Visible = true;
-                android_png_ask.Visible = true;
-                android_png_button.Visible = true;
-                favicon_png_ask.Visible = true;
-                favicon_png_button.Visible = true;
-                //Making evrything where it should be and resizing the form
-                Next_Button.Location = new Point(12, 135);
-                Next_Button.Size = new Size(215, 23);
-                this.Size = new Size(255, 210);
+                Next_Button.Text = "Make your Website!";
             }
             else if (TemplateUsed == 1 && PagesFail == 0 && AllFilledIn == 1)
             {
@@ -361,31 +825,30 @@ namespace Click_To_Website
 
                 //Website Pages
                 string[] Webpage =   {
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName1.Replace(" ","").ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName1.Replace(" ","").ToLower() + "_1" + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>"+PageName1.Replace(" ","") +"</h4>",
 "              <p></p>",
 "              <ul class=\"toc\">",
 "                <h4>Contents of page</h4>",
-Content_List,
+Content_List_Pageone,
 "              </ul>",
-"              <h5 id=\""+ Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "").ToLower()+ "1\">"+ Paragraph1_Title_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") + "</h5>",
-"<p>" +Paragraph1_Content_Pageone.Replace("System.Windows.Forms.RichTextBox, Text: ", "") +"</p>",
-"              <h5 id=\"lorem3\"> Lorem ipsum dolor sit amet</h5>",
-"              <p>",
-"                    Eiusmod nulla aliquip ipsum reprehenderit nostrud non excepteur mollit amet esse est est dolor.Dolore quis pariatur sit consectetur veniam esse ullamco duis Lorem qui enim ut veniam. Officia deserunt minim duis laborum dolor in velit pariatur commodo ullamco eu.Aute adipisicing ad duis labore laboris do mollit dolor cillum sunt aliqua ullamco. Esse tempor quis cillum consequat reprehenderit. Adipisicing proident anim eu sint elit aliqua anim dolore cupidatat fugiat aliquip qui.",
-"                    Nisi eiusmod esse cupidatat excepteur exercitation ipsum reprehenderit nostrud deserunt aliqua ullamco.Anim est irure commodo eiusmod pariatur officia.Est dolor ipsum excepteur magna aliqua ad veniam irure qui occaecat eiusmod aute fugiat commodo.Quis mollit incididunt amet sit minim velit eu fugiat voluptate excepteur.Sit minim id pariatur ex cupidatat cupidatat nostrud nostrud ipsum.",
-"                    Enim ea officia excepteur ad veniam id reprehenderit eiusmod esse mollit consequat. Esse non aute ullamco Lorem aliqua qui dolore irure eiusmod aute aliqua proident labore aliqua.Ipsum voluptate voluptate exercitation laborum deserunt nulla elit aliquip et minim ex veniam.Duis cupidatat aute sunt officia mollit dolor ad elit ad aute labore nostrud duis pariatur.In est sint voluptate consectetur velit ea non labore.Ut duis ea aliqua consequat nulla laboris fugiat aute id culpa proident. Minim eiusmod laboris enim Lorem nisi excepteur mollit voluptate enim labore reprehenderit officia mollit.",
-"                    Cupidatat labore nisi ut sunt voluptate quis sunt qui ad Lorem esse nisi.Ex esse velit ullamco incididunt occaecat dolore veniam tempor minim adipisicing amet. Consequat in exercitation est elit anim consequat cillum sint labore cillum.Aliquip mollit laboris ad labore anim.",
-"              </p>",
+"              <h5 id=\""+ Paragraph1_Title_Pageone.Replace(" ", " ").ToLower()+ "1\">"+ Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "</h5>",
+"<p>" +Paragraph1_Content_Pageone.Replace(" ", " ").ToLower() +"</p>",
+"              <h5 id=\""+ Paragraph2_Title_Pageone.Replace(" ", " ").ToLower()+ "2\">"+ Paragraph2_Title_Pageone.Replace(" ", " ") + "</h5>",
+"<p>" +Paragraph2_Content_Pageone.Replace(" ", " ") +"</p>",
+"              <h5 id=\""+ Paragraph3_Title_Pageone.Replace(" ", " ").ToLower()+ "3\">"+ Paragraph3_Title_Pageone.Replace(" ", " ") + "</h5>",
+"<p>" +Paragraph3_Content_Pageone.Replace(" ", " ") +"</p>",
+"              <h5 id=\""+ Paragraph4_Title_Pageone.Replace(" ", " ").ToLower()+ "3\">"+ Paragraph4_Title_Pageone.Replace(" ", " ") + "</h5>",
+"<p>" +Paragraph4_Content_Pageone.Replace(" ", " ") +"</p>",
 "            </div>",
 "          </section>",
 "        </div>",
 };
                 string[] Webpage2 = {
 string.Join("",Webpage),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName2.Replace(" ","").ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName2.Replace(" ","").ToLower() + "_2" + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -440,7 +903,7 @@ string.Join("",Webpage),
                 string[] Webpage3 = {
 string.Join("",Webpage),
 string.Join("",Webpage2),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName3.Replace(" ","").ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName3.Replace(" ","").ToLower() + "_3" + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -496,7 +959,7 @@ string.Join("",Webpage2),
 string.Join("",Webpage),
 string.Join("",Webpage2),
 string.Join("",Webpage3),
-"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName4.Replace(" ","").ToLower() + "\">",
+"        <div class=\"mdl-layout__tab-panel\" id=\"" + PageName4.Replace(" ","").ToLower() + "_4" + "\">",
 "          <section class=\"section--center mdl-grid mdl-grid--no-spacing\">",
 "            <div class=\"mdl-cell mdl-cell--12-col\">",
 "              <h4>Features</h4>",
@@ -664,27 +1127,27 @@ string.Join("",Webpage3),
                 //Making the nav bar change on how much pages they are
                 if (Pages == 1)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "_1" + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>";
                 }
                 else if (Pages == 2)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "_1" + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "_2" + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>";
                     Webpage = Webpage2;
                 }
                 else if (Pages == 3)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
-                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "_1" + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "_2" + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
+                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "_3" + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>";
                     Webpage = Webpage3;
                 }
                 else if (Pages == 4)
                 {
-                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
-                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
-                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>" +
-                    "<a href =\"#" + PageName4.Replace(" ", "").ToLower() + "\" class=\"mdl-layout__tab\">" + PageName4 + "</a>";
+                    WebsiteNav = "<a href =\"#" + PageName1.Replace(" ", "").ToLower() + "_1" + "\" class=\"mdl-layout__tab\">" + PageName1 + "</a>" +
+                    "<a href =\"#" + PageName2.Replace(" ", "").ToLower() + "_2" + "\" class=\"mdl-layout__tab\">" + PageName2 + "</a>" +
+                    "<a href =\"#" + PageName3.Replace(" ", "").ToLower() + "_3" + "\" class=\"mdl-layout__tab\">" + PageName3 + "</a>" +
+                    "<a href =\"#" + PageName4.Replace(" ", "").ToLower() + "_4" + "\" class=\"mdl-layout__tab\">" + PageName4 + "</a>";
                     Webpage = Webpage4;
                 }
                 #endregion
@@ -1362,7 +1825,7 @@ string.Join("",DefaultPage),
                 }
                 catch (ArgumentException)
                 {
-                    MessageBox.Show("Colour too dark to use (red, blue and green need to be 21 and up)","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Colour too dark to use (red, blue and green at the bottom right need to be 20 and up)","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
