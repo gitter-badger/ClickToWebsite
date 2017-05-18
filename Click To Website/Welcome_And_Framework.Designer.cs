@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Welcome_And_Framework));
             this.Welcome_Name = new System.Windows.Forms.Label();
             this.Welcome_Info = new System.Windows.Forms.Label();
             this.Next_Button = new System.Windows.Forms.Button();
@@ -145,9 +146,12 @@
             // Picture_Materialize
             // 
             this.Picture_Materialize.BackColor = System.Drawing.SystemColors.WindowText;
+            this.Picture_Materialize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Materialize.Image = global::Click_To_Website.Properties.Resources.MDI_Text_Only_Pic;
             this.Picture_Materialize.Location = new System.Drawing.Point(38, 66);
             this.Picture_Materialize.Name = "Picture_Materialize";
             this.Picture_Materialize.Size = new System.Drawing.Size(125, 75);
+            this.Picture_Materialize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picture_Materialize.TabIndex = 12;
             this.Picture_Materialize.TabStop = false;
             this.Picture_Materialize.Visible = false;
@@ -183,6 +187,7 @@
             this.Controls.Add(this.Welcome_Info);
             this.Controls.Add(this.Welcome_Name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Welcome_And_Framework";
             this.ShowIcon = false;

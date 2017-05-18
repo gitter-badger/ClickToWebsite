@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_black.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap_Setup.cs">
+    <Compile Include="Bootstrap\Bootstrap_Setup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bootstrap_Setup.Designer.cs">
+    <Compile Include="Bootstrap\Bootstrap_Setup.Designer.cs">
       <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
     </Compile>
     <Compile Include="Materialize\Materialize_Setup.cs">
@@ -66,7 +69,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bootstrap_Setup.resx">
+    <EmbeddedResource Include="Bootstrap\Bootstrap_Setup.resx">
       <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materialize\Materialize_Setup.resx">
@@ -100,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MDI_Text_Only_Pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_black.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

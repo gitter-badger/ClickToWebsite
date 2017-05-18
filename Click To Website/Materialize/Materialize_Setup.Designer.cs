@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materialize_Setup));
             this.comboBox_Select_Template = new System.Windows.Forms.ComboBox();
             this.Website_Look_Ask = new System.Windows.Forms.Label();
             this.Website_Picture = new System.Windows.Forms.PictureBox();
@@ -728,7 +729,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1079, 251);
+            this.ClientSize = new System.Drawing.Size(284, 251);
+            this.Controls.Add(this.TextBar_3);
+            this.Controls.Add(this.TextBar_4);
+            this.Controls.Add(this.TextBar_2);
             this.Controls.Add(this.Paragraph4_Content_Ask);
             this.Controls.Add(this.Paragraph4_Content_TextBox);
             this.Controls.Add(this.Paragraph4_Title_Ask);
@@ -742,7 +746,6 @@
             this.Controls.Add(this.Paragraph2_Title_Ask);
             this.Controls.Add(this.Paragraph2_Title_TextBox);
             this.Controls.Add(this.Paragraph1_Content_Ask);
-            this.Controls.Add(this.Paragraph1_Content_TextBox);
             this.Controls.Add(this.Paragraph1_Title_Ask);
             this.Controls.Add(this.Paragraph_Ask_Fourthpage);
             this.Controls.Add(this.Paragraph_Ask_Thirdpage);
@@ -761,10 +764,7 @@
             this.Controls.Add(this.favicon_png_ask);
             this.Controls.Add(this.android_png_ask);
             this.Controls.Add(this.ios_png_ask);
-            this.Controls.Add(this.TextBar_2);
             this.Controls.Add(this.TextBar_1);
-            this.Controls.Add(this.TextBar_3);
-            this.Controls.Add(this.TextBar_4);
             this.Controls.Add(this.Page4_Name_TextBox);
             this.Controls.Add(this.Page4_Name_Ask);
             this.Controls.Add(this.Page3_Name_TextBox);
@@ -788,7 +788,9 @@
             this.Controls.Add(this.Paragraph_TextBox_Secondpage);
             this.Controls.Add(this.Paragraph_TextBox_Firstpage);
             this.Controls.Add(this.Paragraph1_Title_TextBox);
+            this.Controls.Add(this.Paragraph1_Content_TextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Materialize_Setup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
