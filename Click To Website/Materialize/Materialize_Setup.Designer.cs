@@ -796,6 +796,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Click To Website";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Materialize_Setup_FormClosed);
+            this.SizeChanged += new System.EventHandler(this.Materialize_Setup_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).EndInit();

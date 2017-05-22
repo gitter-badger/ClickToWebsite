@@ -834,10 +834,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -886,17 +882,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagetwo = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -911,10 +896,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -963,10 +944,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagetwo = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1015,20 +992,9 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagethree = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagethree = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagethree = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagethree = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagethree = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagethree = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
-"                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
+"                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "              <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
 
                         Content_List_Pagetwo =
 "                <a href =\"#" + Paragraph1_Title_Pagetwo.Replace(" ", " ").ToLower() + "1_2\">" + Paragraph1_Title_Pagetwo.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pagetwo.Replace(" ", " ").ToLower() + "2_2\">" + Paragraph2_Title_Pagetwo.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pagetwo.Replace(" ", " ").ToLower() + "3_2\">" + Paragraph3_Title_Pagetwo.Replace(" ", " ") + "</a>";
@@ -1043,10 +1009,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1095,10 +1057,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagetwo = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1147,10 +1105,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagethree = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagethree = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagethree = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagethree = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagethree = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagethree = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1199,17 +1153,6 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pagefour = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pagefour = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pagefour = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pagefour = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagefour = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagefour = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -1230,23 +1173,12 @@ namespace Click_To_Website
                     {
                         Paragraph1_Title_Pageone = Paragraph1_Title_TextBox.Text.ToString();
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
-                        Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
-                        Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Content_List_Pageone =
 "                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
 
                         PagesDone++;
                         Next_Button.PerformClick();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
                     }
                     else
                     {
@@ -1340,8 +1272,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1385,15 +1315,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -1410,8 +1331,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1455,8 +1374,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1500,15 +1417,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagethree = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagethree = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagethree = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagethree = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagethree = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -1528,8 +1436,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1573,8 +1479,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagetwo = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagetwo = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1618,8 +1522,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagethree = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagethree = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagethree = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagethree = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagethree = Paragraph3_Content_TextBox.Text.ToString();
 
                         Paragraph1_Title_TextBox.ResetText();
                         Paragraph1_Content_TextBox.ResetText();
@@ -1663,15 +1565,6 @@ namespace Click_To_Website
                         Paragraph1_Content_Pagefour = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pagefour = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pagefour = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pagefour = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pagefour = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -1694,21 +1587,12 @@ namespace Click_To_Website
                         Paragraph1_Content_Pageone = Paragraph1_Content_TextBox.Text.ToString();
                         Paragraph2_Title_Pageone = Paragraph2_Title_TextBox.Text.ToString();
                         Paragraph2_Content_Pageone = Paragraph2_Content_TextBox.Text.ToString();
-                        Paragraph3_Title_Pageone = Paragraph3_Title_TextBox.Text.ToString();
-                        Paragraph3_Content_Pageone = Paragraph3_Content_TextBox.Text.ToString();
 
                         Content_List_Pageone =
 "                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
 
                         PagesDone++;
                         Next_Button.PerformClick();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
                     }
                     else
                     {
@@ -2027,14 +1911,7 @@ namespace Click_To_Website
                         Paragraph2_Content_Pagetwo = Paragraph2_Content_TextBox.Text.ToString();
                         Paragraph3_Title_Pagetwo = Paragraph3_Title_TextBox.Text.ToString();
                         Paragraph3_Content_Pagetwo = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
-
+                        
                         Content_List_Pageone =
 "                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
 
@@ -2150,13 +2027,6 @@ namespace Click_To_Website
                         Paragraph2_Content_Pagethree = Paragraph2_Content_TextBox.Text.ToString();
                         Paragraph3_Title_Pagethree = Paragraph3_Title_TextBox.Text.ToString();
                         Paragraph3_Content_Pagethree = Paragraph3_Content_TextBox.Text.ToString();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
 
                         Content_List_Pageone =
 "                    <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
@@ -2326,13 +2196,6 @@ namespace Click_To_Website
                         Paragraph3_Title_Pagefour = Paragraph3_Title_TextBox.Text.ToString();
                         Paragraph3_Content_Pagefour = Paragraph3_Content_TextBox.Text.ToString();
 
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
-
                         Content_List_Pageone =
 "                <a href =\"#" + Paragraph1_Title_Pageone.Replace(" ", " ").ToLower() + "1_1\">" + Paragraph1_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph2_Title_Pageone.Replace(" ", " ").ToLower() + "2_1\">" + Paragraph2_Title_Pageone.Replace(" ", " ") + "</a>" + "                <a href =\"#" + Paragraph3_Title_Pageone.Replace(" ", " ").ToLower() + "3_1\">" + Paragraph3_Title_Pageone.Replace(" ", " ") + "</a>";
 
@@ -2362,13 +2225,6 @@ namespace Click_To_Website
 
                         PagesDone++;
                         Next_Button.PerformClick();
-
-                        Paragraph1_Title_TextBox.ResetText();
-                        Paragraph1_Content_TextBox.ResetText();
-                        Paragraph2_Title_TextBox.ResetText();
-                        Paragraph2_Content_TextBox.ResetText();
-                        Paragraph3_Title_TextBox.ResetText();
-                        Paragraph3_Content_TextBox.ResetText();
                     }
                     else
                     {
@@ -3322,6 +3178,11 @@ string.Join("",DefaultPage),
                     MessageBox.Show("Colour too dark to use (red, blue and green at the bottom right need to be 20 and up)","Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void Materialize_Setup_SizeChanged(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
         }
     }
 }

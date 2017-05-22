@@ -75,5 +75,10 @@ namespace Click_To_Website
             }
             Background_Bootstrap.Visible = true;
         }
+
+        private void Welcome_And_Framework_SizeChanged(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

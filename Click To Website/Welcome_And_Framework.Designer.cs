@@ -36,14 +36,14 @@
             this.Materialize_Ask = new System.Windows.Forms.Label();
             this.Or_Ask = new System.Windows.Forms.Label();
             this.Bootstrap_Ask = new System.Windows.Forms.Label();
-            this.Background_Materialize = new System.Windows.Forms.PictureBox();
-            this.Background_Bootstrap = new System.Windows.Forms.PictureBox();
-            this.Picture_Materialize = new System.Windows.Forms.PictureBox();
             this.Picture_Bootstrap = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Background_Materialize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).BeginInit();
+            this.Picture_Materialize = new System.Windows.Forms.PictureBox();
+            this.Background_Bootstrap = new System.Windows.Forms.PictureBox();
+            this.Background_Materialize = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Bootstrap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background_Materialize)).BeginInit();
             this.SuspendLayout();
             // 
             // Welcome_Name
@@ -123,25 +123,16 @@
             this.Bootstrap_Ask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bootstrap_Ask.Visible = false;
             // 
-            // Background_Materialize
+            // Picture_Bootstrap
             // 
-            this.Background_Materialize.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Background_Materialize.Location = new System.Drawing.Point(35, 63);
-            this.Background_Materialize.Name = "Background_Materialize";
-            this.Background_Materialize.Size = new System.Drawing.Size(131, 81);
-            this.Background_Materialize.TabIndex = 10;
-            this.Background_Materialize.TabStop = false;
-            this.Background_Materialize.Visible = false;
-            // 
-            // Background_Bootstrap
-            // 
-            this.Background_Bootstrap.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Background_Bootstrap.Location = new System.Drawing.Point(37, 183);
-            this.Background_Bootstrap.Name = "Background_Bootstrap";
-            this.Background_Bootstrap.Size = new System.Drawing.Size(131, 81);
-            this.Background_Bootstrap.TabIndex = 11;
-            this.Background_Bootstrap.TabStop = false;
-            this.Background_Bootstrap.Visible = false;
+            this.Picture_Bootstrap.BackColor = System.Drawing.SystemColors.WindowText;
+            this.Picture_Bootstrap.Location = new System.Drawing.Point(40, 186);
+            this.Picture_Bootstrap.Name = "Picture_Bootstrap";
+            this.Picture_Bootstrap.Size = new System.Drawing.Size(125, 75);
+            this.Picture_Bootstrap.TabIndex = 13;
+            this.Picture_Bootstrap.TabStop = false;
+            this.Picture_Bootstrap.Visible = false;
+            this.Picture_Bootstrap.Click += new System.EventHandler(this.Picture_Bootstrap_Click);
             // 
             // Picture_Materialize
             // 
@@ -157,16 +148,27 @@
             this.Picture_Materialize.Visible = false;
             this.Picture_Materialize.Click += new System.EventHandler(this.Picture_Materialize_Click);
             // 
-            // Picture_Bootstrap
+            // Background_Bootstrap
             // 
-            this.Picture_Bootstrap.BackColor = System.Drawing.SystemColors.WindowText;
-            this.Picture_Bootstrap.Location = new System.Drawing.Point(40, 186);
-            this.Picture_Bootstrap.Name = "Picture_Bootstrap";
-            this.Picture_Bootstrap.Size = new System.Drawing.Size(125, 75);
-            this.Picture_Bootstrap.TabIndex = 13;
-            this.Picture_Bootstrap.TabStop = false;
-            this.Picture_Bootstrap.Visible = false;
-            this.Picture_Bootstrap.Click += new System.EventHandler(this.Picture_Bootstrap_Click);
+            this.Background_Bootstrap.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Background_Bootstrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Background_Bootstrap.Location = new System.Drawing.Point(37, 183);
+            this.Background_Bootstrap.Name = "Background_Bootstrap";
+            this.Background_Bootstrap.Size = new System.Drawing.Size(131, 81);
+            this.Background_Bootstrap.TabIndex = 11;
+            this.Background_Bootstrap.TabStop = false;
+            this.Background_Bootstrap.Visible = false;
+            // 
+            // Background_Materialize
+            // 
+            this.Background_Materialize.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Background_Materialize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Background_Materialize.Location = new System.Drawing.Point(35, 63);
+            this.Background_Materialize.Name = "Background_Materialize";
+            this.Background_Materialize.Size = new System.Drawing.Size(131, 81);
+            this.Background_Materialize.TabIndex = 10;
+            this.Background_Materialize.TabStop = false;
+            this.Background_Materialize.Visible = false;
             // 
             // Welcome_And_Framework
             // 
@@ -193,10 +195,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
-            ((System.ComponentModel.ISupportInitialize)(this.Background_Materialize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).EndInit();
+            this.SizeChanged += new System.EventHandler(this.Welcome_And_Framework_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Bootstrap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background_Materialize)).EndInit();
             this.ResumeLayout(false);
 
         }
