@@ -34,7 +34,6 @@ namespace Click_To_Website
                 Materialize_Ask.Visible = true;
                 Picture_Bootstrap.Visible = true;
                 Picture_Materialize.Visible = true;
-                Next_Button.Location = new Point(17, 275);
             }
             #endregion
             #region Select Framework
