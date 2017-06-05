@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon_black.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Bootstrap\Bootstrap_Setup.Designer.cs">
       <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materialize\MDI_Text_Only_HTML_AND_CSS.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Materialize\Materialize_Setup.cs">
       <SubType>Form</SubType>
@@ -105,7 +108,7 @@
     <None Include="Resources\MDI_Text_Only_Pic.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon_black.ico" />
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
