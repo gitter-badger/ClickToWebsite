@@ -34,6 +34,12 @@ namespace Click_To_Website
                 Materialize_Ask.Visible = true;
                 Picture_Bootstrap.Visible = true;
                 Picture_Materialize.Visible = true;
+                Picture_Materialize.Location = new Point(38, 66);
+                Background_Materialize.Location = new Point(35, 63);
+                Picture_Bootstrap.Location = new Point(38, 189);
+                Background_Bootstrap.Location = new Point(35, 186);
+                Or_Ask.Location = new Point(91, 144);
+                Bootstrap_Ask.Location = new Point(69, 164);
             }
             #endregion
             #region Select Framework

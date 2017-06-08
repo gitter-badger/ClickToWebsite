@@ -51,7 +51,7 @@
             this.Welcome_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Welcome_Name.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Welcome_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Welcome_Name.Location = new System.Drawing.Point(4, 9);
+            this.Welcome_Name.Location = new System.Drawing.Point(10, 9);
             this.Welcome_Name.Name = "Welcome_Name";
             this.Welcome_Name.Size = new System.Drawing.Size(170, 33);
             this.Welcome_Name.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.Welcome_Info.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Welcome_Info.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Welcome_Info.Location = new System.Drawing.Point(4, 57);
+            this.Welcome_Info.Location = new System.Drawing.Point(10, 57);
             this.Welcome_Info.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.Welcome_Info.Name = "Welcome_Info";
             this.Welcome_Info.Size = new System.Drawing.Size(170, 70);
@@ -75,9 +75,9 @@
             this.Next_Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Next_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Next_Button.Location = new System.Drawing.Point(8, 130);
+            this.Next_Button.Location = new System.Drawing.Point(8, 110);
             this.Next_Button.Name = "Next_Button";
-            this.Next_Button.Size = new System.Drawing.Size(162, 20);
+            this.Next_Button.Size = new System.Drawing.Size(174, 20);
             this.Next_Button.TabIndex = 2;
             this.Next_Button.Text = "Next";
             this.Next_Button.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // 
             this.Framework_Ask.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Framework_Ask.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Framework_Ask.Location = new System.Drawing.Point(2, 9);
+            this.Framework_Ask.Location = new System.Drawing.Point(8, 9);
             this.Framework_Ask.Name = "Framework_Ask";
             this.Framework_Ask.Size = new System.Drawing.Size(171, 33);
             this.Framework_Ask.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             this.Materialize_Ask.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Materialize_Ask.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Materialize_Ask.Location = new System.Drawing.Point(64, 42);
+            this.Materialize_Ask.Location = new System.Drawing.Point(67, 42);
             this.Materialize_Ask.Name = "Materialize_Ask";
             this.Materialize_Ask.Size = new System.Drawing.Size(59, 21);
             this.Materialize_Ask.TabIndex = 9;
@@ -109,21 +109,21 @@
             // 
             // Or_Ask
             // 
-            this.Or_Ask.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Or_Ask.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Or_Ask.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Or_Ask.Location = new System.Drawing.Point(89, 146);
+            this.Or_Ask.Location = new System.Drawing.Point(91, 68);
             this.Or_Ask.Name = "Or_Ask";
             this.Or_Ask.Size = new System.Drawing.Size(14, 18);
             this.Or_Ask.TabIndex = 8;
             this.Or_Ask.Text = "Or";
-            this.Or_Ask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Or_Ask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Or_Ask.Visible = false;
             // 
             // Bootstrap_Ask
             // 
             this.Bootstrap_Ask.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Bootstrap_Ask.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Bootstrap_Ask.Location = new System.Drawing.Point(69, 164);
+            this.Bootstrap_Ask.Location = new System.Drawing.Point(69, 84);
             this.Bootstrap_Ask.Name = "Bootstrap_Ask";
             this.Bootstrap_Ask.Size = new System.Drawing.Size(54, 19);
             this.Bootstrap_Ask.TabIndex = 7;
@@ -133,9 +133,9 @@
             // 
             // Picture_Bootstrap
             // 
-            this.Picture_Bootstrap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Picture_Bootstrap.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Picture_Bootstrap.BackColor = System.Drawing.SystemColors.WindowText;
-            this.Picture_Bootstrap.Location = new System.Drawing.Point(36, 186);
+            this.Picture_Bootstrap.Location = new System.Drawing.Point(31, 106);
             this.Picture_Bootstrap.Name = "Picture_Bootstrap";
             this.Picture_Bootstrap.Size = new System.Drawing.Size(125, 75);
             this.Picture_Bootstrap.TabIndex = 13;
@@ -149,7 +149,7 @@
             this.Picture_Materialize.BackColor = System.Drawing.SystemColors.WindowText;
             this.Picture_Materialize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Picture_Materialize.Image = global::Click_To_Website.Properties.Resources.MDI_Text_Only_Pic;
-            this.Picture_Materialize.Location = new System.Drawing.Point(34, 66);
+            this.Picture_Materialize.Location = new System.Drawing.Point(32, 66);
             this.Picture_Materialize.Name = "Picture_Materialize";
             this.Picture_Materialize.Size = new System.Drawing.Size(125, 75);
             this.Picture_Materialize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +163,7 @@
             this.Background_Bootstrap.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Background_Bootstrap.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Background_Bootstrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Background_Bootstrap.Location = new System.Drawing.Point(33, 183);
+            this.Background_Bootstrap.Location = new System.Drawing.Point(28, 103);
             this.Background_Bootstrap.Name = "Background_Bootstrap";
             this.Background_Bootstrap.Size = new System.Drawing.Size(131, 81);
             this.Background_Bootstrap.TabIndex = 11;
@@ -172,10 +172,10 @@
             // 
             // Background_Materialize
             // 
-            this.Background_Materialize.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Background_Materialize.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Background_Materialize.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Background_Materialize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Background_Materialize.Location = new System.Drawing.Point(31, 63);
+            this.Background_Materialize.Location = new System.Drawing.Point(29, 63);
             this.Background_Materialize.Name = "Background_Materialize";
             this.Background_Materialize.Size = new System.Drawing.Size(131, 81);
             this.Background_Materialize.TabIndex = 10;
@@ -187,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(176, 161);
+            this.ClientSize = new System.Drawing.Size(188, 141);
             this.Controls.Add(this.Bootstrap_Ask);
             this.Controls.Add(this.Materialize_Ask);
             this.Controls.Add(this.Framework_Ask);
@@ -199,7 +199,6 @@
             this.Controls.Add(this.Next_Button);
             this.Controls.Add(this.Welcome_Info);
             this.Controls.Add(this.Welcome_Name);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Welcome_And_Framework";

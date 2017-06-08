@@ -4,6 +4,57 @@ namespace Click_To_Website
 {
     public partial class Materialize_Setup 
     {
+        #region Paragraph Content+Titles
+        public string Paragraph1_Title_Pageone = "";
+        public string Paragraph1_Content_Pageone = "";
+        public string Paragraph2_Title_Pageone = "";
+        public string Paragraph2_Content_Pageone = "";
+        public string Paragraph3_Title_Pageone = "";
+        public string Paragraph3_Content_Pageone = "";
+        public string Paragraph4_Title_Pageone = "";
+        public string Paragraph4_Content_Pageone = "";
+
+        public string Paragraph1_Title_Pagetwo = "";
+        public string Paragraph1_Content_Pagetwo = "";
+        public string Paragraph2_Title_Pagetwo = "";
+        public string Paragraph2_Content_Pagetwo = "";
+        public string Paragraph3_Title_Pagetwo = "";
+        public string Paragraph3_Content_Pagetwo = "";
+        public string Paragraph4_Title_Pagetwo = "";
+        public string Paragraph4_Content_Pagetwo = "";
+
+        public string Paragraph1_Title_Pagethree = "";
+        public string Paragraph1_Content_Pagethree = "";
+        public string Paragraph2_Title_Pagethree = "";
+        public string Paragraph2_Content_Pagethree = "";
+        public string Paragraph3_Title_Pagethree = "";
+        public string Paragraph3_Content_Pagethree = "";
+        public string Paragraph4_Title_Pagethree = "";
+        public string Paragraph4_Content_Pagethree = "";
+
+        public string Paragraph1_Title_Pagefour = "";
+        public string Paragraph1_Content_Pagefour = "";
+        public string Paragraph2_Title_Pagefour = "";
+        public string Paragraph2_Content_Pagefour = "";
+        public string Paragraph3_Title_Pagefour = "";
+        public string Paragraph3_Content_Pagefour = "";
+        public string Paragraph4_Title_Pagefour = "";
+        public string Paragraph4_Content_Pagefour = "";
+
+        public string Content_List_Pageone = "";
+        public string Content_List_Pagetwo = "";
+        public string Content_List_Pagethree = "";
+        public string Content_List_Pagefour = "";
+        #endregion
+
+        public int R = 81;
+        public int G = 45;
+        public int B = 168;
+        public int Paragraph1 = 0;
+        public int Paragraph2 = 0;
+        public int Paragraph3 = 0;
+        public int Paragraph4 = 0;
+
         String[] MDI_Text_Only =
 {
 "<!doctype html>",
