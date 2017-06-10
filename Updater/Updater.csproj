@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00C74F5B-8AAF-41BA-AE88-B3B948810980}</ProjectGuid>
+    <ProjectGuid>{AB070540-CEE6-41DB-80BD-E2A13506921F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Click_To_Website</RootNamespace>
-    <AssemblyName>Click To Website</AssemblyName>
+    <RootNamespace>Updater</RootNamespace>
+    <AssemblyName>Updater</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,38 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\Bootstrap_Setup.cs">
+    <Compile Include="UpdaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bootstrap\Bootstrap_Setup.Designer.cs">
-      <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Materialize\MDI_Text_Only_HTML_AND_CSS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Materialize\Materialize_Setup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Materialize\Materialize_Setup.Designer.cs">
-      <DependentUpon>Materialize_Setup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="updatechecker.cs" />
-    <Compile Include="Welcome_And_Framework.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Welcome_And_Framework.Designer.cs">
-      <DependentUpon>Welcome_And_Framework.cs</DependentUpon>
+    <Compile Include="UpdaterForm.Designer.cs">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bootstrap\Bootstrap_Setup.resx">
-      <DependentUpon>Bootstrap_Setup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Materialize\Materialize_Setup.resx">
-      <DependentUpon>Materialize_Setup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Welcome_And_Framework.resx">
-      <DependentUpon>Welcome_And_Framework.cs</DependentUpon>
+    <EmbeddedResource Include="UpdaterForm.resx">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,7 +67,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,11 +82,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MDI_Text_Only_Pic.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="icon_black.ico" />
-    <Content Include="ver.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

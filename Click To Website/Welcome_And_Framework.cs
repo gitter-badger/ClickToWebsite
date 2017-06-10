@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Click_To_Website
 {
     public partial class Welcome_And_Framework : Form
     {
+        updatechecker check = new updatechecker();
+        static string AppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        static string AppDataCTW = AppData + "\\AzyIsCool\\Click To Website";
+
         public Welcome_And_Framework()
         {
             InitializeComponent();
@@ -84,6 +89,20 @@ namespace Click_To_Website
         private void Welcome_And_Framework_SizeChanged(object sender, EventArgs e)
         {
             this.CenterToScreen();
+        }
+
+        private async void Welcome_And_Framework_Load(object sender, EventArgs e)
+        {
+            await check.CheckForUpdates(UpdateLabel);
+            if (File.Exists(AppDataCTW + "\\Updater.exe"))
+            {
+                File.Delete(AppDataCTW + "\\Updater.exe");
+            }
+        }
+
+        private void UpdateLabel_Click(object sender, EventArgs e)
+        {
+            check.UpdateMessageBox();
         }
     }
 }

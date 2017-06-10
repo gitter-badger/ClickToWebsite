@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Click To Website")]
-[assembly: AssemblyDescription("This program will let you make a website with no/little html knowledge!")]
+[assembly: AssemblyTitle("Updater")]
+[assembly: AssemblyDescription("This will update Click To Website without you needing to go to the github page")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AzyIsCool")]
-[assembly: AssemblyProduct("Click To Website")]
-[assembly: AssemblyCopyright("AzyIsCool©  2017")]
+[assembly: AssemblyProduct("Updater")]
+[assembly: AssemblyCopyright("AzyIsCool ©  2017")]
 [assembly: AssemblyTrademark("AzyIsCool")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("00c74f5b-8aaf-41ba-ae88-b3b948810980")]
+[assembly: Guid("ab070540-cee6-41db-80bd-e2a13506921f")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("0.0.1.3")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

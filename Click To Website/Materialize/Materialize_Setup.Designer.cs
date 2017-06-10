@@ -93,6 +93,7 @@
             this.Paragraph4_Content_TextBox = new System.Windows.Forms.RichTextBox();
             this.Paragraph4_Title_Ask = new System.Windows.Forms.Label();
             this.Paragraph4_Title_TextBox = new System.Windows.Forms.RichTextBox();
+            this.UpdateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_3)).BeginInit();
@@ -106,6 +107,7 @@
             // comboBox_Select_Template
             // 
             this.comboBox_Select_Template.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Select_Template.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox_Select_Template.FormattingEnabled = true;
             this.comboBox_Select_Template.Items.AddRange(new object[] {
             "MDI Text Only",
@@ -139,6 +141,7 @@
             // 
             // Next_Button
             // 
+            this.Next_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Next_Button.Location = new System.Drawing.Point(12, 217);
             this.Next_Button.Name = "Next_Button";
             this.Next_Button.Size = new System.Drawing.Size(260, 23);
@@ -376,6 +379,7 @@
             // 
             // ios_png_button
             // 
+            this.ios_png_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ios_png_button.Location = new System.Drawing.Point(61, 25);
             this.ios_png_button.Name = "ios_png_button";
             this.ios_png_button.Size = new System.Drawing.Size(75, 23);
@@ -387,6 +391,7 @@
             // 
             // android_png_button
             // 
+            this.android_png_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.android_png_button.Location = new System.Drawing.Point(61, 67);
             this.android_png_button.Name = "android_png_button";
             this.android_png_button.Size = new System.Drawing.Size(75, 23);
@@ -398,6 +403,7 @@
             // 
             // favicon_png_button
             // 
+            this.favicon_png_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.favicon_png_button.Location = new System.Drawing.Point(61, 109);
             this.favicon_png_button.Name = "favicon_png_button";
             this.favicon_png_button.Size = new System.Drawing.Size(75, 23);
@@ -410,6 +416,7 @@
             // got_file_favicon
             // 
             this.got_file_favicon.AutoSize = true;
+            this.got_file_favicon.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.got_file_favicon.Location = new System.Drawing.Point(142, 114);
             this.got_file_favicon.Name = "got_file_favicon";
             this.got_file_favicon.Size = new System.Drawing.Size(41, 13);
@@ -420,6 +427,7 @@
             // got_file_android
             // 
             this.got_file_android.AutoSize = true;
+            this.got_file_android.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.got_file_android.Location = new System.Drawing.Point(142, 72);
             this.got_file_android.Name = "got_file_android";
             this.got_file_android.Size = new System.Drawing.Size(41, 13);
@@ -430,6 +438,7 @@
             // got_file_ios
             // 
             this.got_file_ios.AutoSize = true;
+            this.got_file_ios.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.got_file_ios.Location = new System.Drawing.Point(142, 28);
             this.got_file_ios.Name = "got_file_ios";
             this.got_file_ios.Size = new System.Drawing.Size(41, 13);
@@ -464,6 +473,7 @@
             // 
             // navbar_colour_Button
             // 
+            this.navbar_colour_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.navbar_colour_Button.Location = new System.Drawing.Point(278, 73);
             this.navbar_colour_Button.Name = "navbar_colour_Button";
             this.navbar_colour_Button.Size = new System.Drawing.Size(276, 23);
@@ -720,6 +730,18 @@
             this.Paragraph4_Title_TextBox.Text = "";
             this.Paragraph4_Title_TextBox.Visible = false;
             // 
+            // UpdateLabel
+            // 
+            this.UpdateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateLabel.AutoSize = true;
+            this.UpdateLabel.Location = new System.Drawing.Point(1008, 3);
+            this.UpdateLabel.Name = "UpdateLabel";
+            this.UpdateLabel.Size = new System.Drawing.Size(70, 13);
+            this.UpdateLabel.TabIndex = 65;
+            this.UpdateLabel.Text = "New Update!";
+            this.UpdateLabel.Visible = false;
+            this.UpdateLabel.Click += new System.EventHandler(this.UpdateLabel_Click);
+            // 
             // Materialize_Setup
             // 
             this.AcceptButton = this.Next_Button;
@@ -730,6 +752,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 251);
+            this.Controls.Add(this.UpdateLabel);
             this.Controls.Add(this.TextBar_3);
             this.Controls.Add(this.TextBar_4);
             this.Controls.Add(this.TextBar_2);
@@ -796,6 +819,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Click To Website";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Materialize_Setup_FormClosed);
+            this.Load += new System.EventHandler(this.Materialize_Setup_Load);
             this.SizeChanged += new System.EventHandler(this.Materialize_Setup_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.Website_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextBar_4)).EndInit();
@@ -876,5 +900,6 @@
         private System.Windows.Forms.RichTextBox Paragraph4_Content_TextBox;
         private System.Windows.Forms.Label Paragraph4_Title_Ask;
         private System.Windows.Forms.RichTextBox Paragraph4_Title_TextBox;
+        private System.Windows.Forms.Label UpdateLabel;
     }
 }

@@ -40,6 +40,7 @@
             this.Picture_Materialize = new System.Windows.Forms.PictureBox();
             this.Background_Bootstrap = new System.Windows.Forms.PictureBox();
             this.Background_Materialize = new System.Windows.Forms.PictureBox();
+            this.UpdateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Bootstrap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).BeginInit();
@@ -182,12 +183,25 @@
             this.Background_Materialize.TabStop = false;
             this.Background_Materialize.Visible = false;
             // 
+            // UpdateLabel
+            // 
+            this.UpdateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateLabel.AutoSize = true;
+            this.UpdateLabel.Location = new System.Drawing.Point(115, 2);
+            this.UpdateLabel.Name = "UpdateLabel";
+            this.UpdateLabel.Size = new System.Drawing.Size(70, 13);
+            this.UpdateLabel.TabIndex = 66;
+            this.UpdateLabel.Text = "New Update!";
+            this.UpdateLabel.Visible = false;
+            this.UpdateLabel.Click += new System.EventHandler(this.UpdateLabel_Click);
+            // 
             // Welcome_And_Framework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(188, 141);
+            this.Controls.Add(this.UpdateLabel);
             this.Controls.Add(this.Bootstrap_Ask);
             this.Controls.Add(this.Materialize_Ask);
             this.Controls.Add(this.Framework_Ask);
@@ -205,12 +219,14 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
+            this.Load += new System.EventHandler(this.Welcome_And_Framework_Load);
             this.SizeChanged += new System.EventHandler(this.Welcome_And_Framework_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Bootstrap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Materialize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Background_Bootstrap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Background_Materialize)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,6 +243,7 @@
         private System.Windows.Forms.PictureBox Background_Bootstrap;
         private System.Windows.Forms.PictureBox Picture_Materialize;
         private System.Windows.Forms.PictureBox Picture_Bootstrap;
+        private System.Windows.Forms.Label UpdateLabel;
     }
 }
 

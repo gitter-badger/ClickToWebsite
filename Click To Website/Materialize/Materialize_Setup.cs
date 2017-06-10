@@ -42,6 +42,7 @@ namespace Click_To_Website
         public int PagesDone = 0;
         static DialogResult resultExclamation;
         static DialogResult resultError;
+        updatechecker check = new updatechecker();
 
         public Materialize_Setup()
         {
@@ -2334,6 +2335,16 @@ Content_List_Pagefour,
         private void Materialize_Setup_SizeChanged(object sender, EventArgs e)
         {
             this.CenterToScreen();
+        }
+
+        private async void Materialize_Setup_Load(object sender, EventArgs e)
+        {
+            await check.CheckForUpdates(UpdateLabel);
+        }
+
+        private void UpdateLabel_Click(object sender, EventArgs e)
+        {
+            check.UpdateMessageBox();
         }
     }
 }
