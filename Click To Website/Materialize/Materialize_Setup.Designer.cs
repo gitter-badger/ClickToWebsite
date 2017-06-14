@@ -141,10 +141,12 @@
             // 
             // Next_Button
             // 
+            this.Next_Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Next_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Next_Button.Location = new System.Drawing.Point(12, 217);
+            this.Next_Button.Location = new System.Drawing.Point(8, 217);
             this.Next_Button.Name = "Next_Button";
-            this.Next_Button.Size = new System.Drawing.Size(260, 23);
+            this.Next_Button.Size = new System.Drawing.Size(264, 23);
             this.Next_Button.TabIndex = 3;
             this.Next_Button.Text = "Next";
             this.Next_Button.UseVisualStyleBackColor = true;
@@ -734,7 +736,7 @@
             // 
             this.UpdateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateLabel.AutoSize = true;
-            this.UpdateLabel.Location = new System.Drawing.Point(1008, 3);
+            this.UpdateLabel.Location = new System.Drawing.Point(4993, 3);
             this.UpdateLabel.Name = "UpdateLabel";
             this.UpdateLabel.Size = new System.Drawing.Size(70, 13);
             this.UpdateLabel.TabIndex = 65;

@@ -16,11 +16,12 @@ namespace Click_To_Website
         static string AppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         static string AppDataCTW = AppData + "\\AzyIsCool\\Click To Website";
         static DateTime DateAndTimeNow = DateTime.Now;
+        string UpdateVer = "";
 
         public void UpdateMessageBox()
         {
             DialogResult result;
-            result = MessageBox.Show("There is a new update to Click To Website \r\nDo you what to update?", "Click To Website", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            result = MessageBox.Show($"There is a new update ({UpdateVer}) to Click To Website \r\nDo you what to update?", "Click To Website", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
                 Process updateprocess = new Process();
@@ -29,15 +30,13 @@ namespace Click_To_Website
                 File.WriteAllText(AppDataCTW + "\\CTWLoc.txt", FileLoc);
                 updateprocess.StartInfo.FileName = AppDataCTW + "\\Updater.exe";
                 updateprocess.Start();
+                Application.Exit();
             }
         }
 
         public async Task CheckForUpdates(Label LabelAt)
         {
-            if (Directory.Exists(AppDataCTW))
-            {
-            }
-            else
+            if (!Directory.Exists(AppDataCTW))
             {
                 Directory.CreateDirectory(AppDataCTW);
             }
@@ -50,13 +49,19 @@ namespace Click_To_Website
                 StreamReader reader = new StreamReader(stream);
                 String content = reader.ReadToEnd();
 
-                content = content.Replace("newestver =", "");
+                UpdateVer = content.Replace("newestver =", "");
+                UpdateVer = UpdateVer.Replace(" ", "");
 
-                if (Convert.ToDecimal(0.013) < Convert.ToDecimal(content))
+                if (Convert.ToDecimal(0.012) < Convert.ToDecimal(UpdateVer))
                 {
-                    uri = new Uri("https://raw.githubusercontent.com/DMP9Labs/ClickToWebsite/master/Click%20To%20Website/bin/Release/Updater.exe", UriKind.Absolute);
+                    uri = new Uri("https://raw.githubusercontent.com/DMP9Labs/ClickToWebsite/master/Updater/bin/Release/Updater.exe", UriKind.Absolute);
                     byte[] downloadupdater = await client.DownloadDataTaskAsync(uri);
-                    File.WriteAllBytes(AppDataCTW + "\\Updater.exe", downloadupdater);
+                    File.WriteAllBytes(AppDataCTW + "\\Updater.txt", downloadupdater);
+                    if (File.Exists(AppDataCTW + "\\Updater.exe"))
+                    {
+                        File.Delete(AppDataCTW + "\\Updater.exe");
+                    }
+                    File.Move(AppDataCTW + "\\Updater.txt", AppDataCTW + "\\Updater.exe");
 
                     LabelAt.Visible = true;
                 }
@@ -65,36 +70,36 @@ namespace Click_To_Website
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: Can't get update infomation" };
+                string[] log = { $"{DateAndTimeNow} (Click To Website): Can't get update infomation" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: Can't get update infomation");
+                Console.WriteLine($"{DateAndTimeNow} (Click To Website): Can't get update infomation");
             }
             catch (IOException)
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: I/O Exception" };
+                string[] log = { $"{DateAndTimeNow} (Click To Website): I/O Exception" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: I/O Exception");
+                Console.WriteLine($"{DateAndTimeNow} (Click To Website): I/O Exception");
             }
             catch (OutOfMemoryException)
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: No Memory Avablie for use" };
+                string[] log = { $"{DateAndTimeNow} (Click To Website): No Memory Avablie for use" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: No Memory Avablie for use");
+                Console.WriteLine($"{DateAndTimeNow} (Click To Website): No Memory Avablie for use");
             }
             catch (OverflowException)
             {
                 DateAndTimeNow = DateTime.Now;
-                string[] log = { $"{DateAndTimeNow}: Overflow Exception" };
+                string[] log = { $"{DateAndTimeNow} (Click To Website): Overflow Exception" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: Overflow Exception");
+                Console.WriteLine($"{DateAndTimeNow} (Click To Website): Overflow Exception");
             }
         }
     }

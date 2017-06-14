@@ -36,24 +36,30 @@ namespace Updater
 
                 byte[] downloadupdater = await client.DownloadDataTaskAsync(uri);
                 File.WriteAllBytes(CTWLoc + "\\Click To Website.exe", downloadupdater);
+
+                File.Delete(AppDataCTW + "\\CTWLoc.txt");
+
+                Done_Label.Visible = true;
+                Open_Button.Visible = true;
             }
             catch (WebException)
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: Can't get update infomation" };
+                string[] log = { $"{DateAndTimeNow} (Updater): Can't get update infomation" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: Can't get update infomation");
+                Console.WriteLine($"{DateAndTimeNow} (Updater): Can't get update infomation");
+                File.WriteAllText(CTWLoc + "\\CTWLoc.txt", CTWLoc);
             }
             catch (FileNotFoundException)
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: Can't find Click To Website.exe" };
+                string[] log = { $"{DateAndTimeNow} (Updater): Can't find Click To Website.exe" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: Can't find Click To Website.exe");
+                Console.WriteLine($"{DateAndTimeNow} (Updater): Can't find Click To Website.exe");
 
                 MessageBox.Show("Can't find Click To Website (Did you not run Click To Website before running this)", "Click To Website", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
@@ -62,19 +68,12 @@ namespace Updater
             {
                 DateAndTimeNow = DateTime.Now;
 
-                string[] log = { $"{DateAndTimeNow}: No Memory Avablie for use" };
+                string[] log = { $"{DateAndTimeNow} (Updater): No Memory Avablie for use" };
 
                 File.AppendAllLines(AppDataCTW + "\\log.txt", log);
-                Console.WriteLine($"{DateAndTimeNow}: No Memory Avablie for use");
+                Console.WriteLine($"{DateAndTimeNow} (Updater): No Memory Avablie for use");
+                File.WriteAllText(CTWLoc + "\\CTWLoc.txt", CTWLoc);
             }
-        }
-
-        void Client_DownloadCompleted(DownloadDataCompletedEventArgs e)
-        {
-            File.Delete(AppDataCTW + "\\CTWLoc.txt");
-
-            Done_Label.Visible = true;
-            Open_Button.Visible = true;
         }
 
         private void Open_Button_Click(object sender, EventArgs e)

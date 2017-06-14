@@ -128,6 +128,14 @@ namespace Click_To_Website
 //Bar
 "      background-color: rgb("+"<ADDR>"+","+"<ADDG>"+","+"<ADDB>"+") !important;",
 "    }",
+"    img",
+"",
+"    {",
+"        display: block;",
+"        margin-left: auto;",
+"        margin-right: auto;",
+"	     max-height: 800px;",
+"	}",
 //This lets me change the colour of the top and nav bar
 "    </style>",
 "      </head>",

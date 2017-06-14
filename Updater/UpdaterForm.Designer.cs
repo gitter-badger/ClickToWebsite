@@ -56,6 +56,7 @@
             this.Done_Label.Size = new System.Drawing.Size(42, 13);
             this.Done_Label.TabIndex = 1;
             this.Done_Label.Text = "Done :)";
+            this.Done_Label.Visible = false;
             // 
             // Open_Button
             // 
@@ -66,6 +67,7 @@
             this.Open_Button.TabIndex = 2;
             this.Open_Button.Text = "Open Click To Website";
             this.Open_Button.UseVisualStyleBackColor = true;
+            this.Open_Button.Visible = false;
             this.Open_Button.Click += new System.EventHandler(this.Open_Button_Click);
             // 
             // UpdaterForm

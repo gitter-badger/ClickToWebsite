@@ -94,10 +94,6 @@ namespace Click_To_Website
         private async void Welcome_And_Framework_Load(object sender, EventArgs e)
         {
             await check.CheckForUpdates(UpdateLabel);
-            if (File.Exists(AppDataCTW + "\\Updater.exe"))
-            {
-                File.Delete(AppDataCTW + "\\Updater.exe");
-            }
         }
 
         private void UpdateLabel_Click(object sender, EventArgs e)
