@@ -1,1 +1,1 @@
-﻿newestver = 0.015
+﻿newestver = 0.014
